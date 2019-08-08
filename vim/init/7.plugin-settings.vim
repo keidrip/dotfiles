@@ -13,6 +13,7 @@ endif
 call plug#begin()
 
 "" [general]
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'cohama/lexima.vim'
 Plug 'scrooloose/nerdtree'
@@ -66,5 +67,8 @@ Plug 'hashivim/vim-terraform', { 'for': ['tf', 'terraform'] }
 
 " [dockerfile]
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['tf', 'Dockerfile'] }
+
+" [rust]
+Plug 'racer-rust/vim-racer'
 
 call plug#end()
