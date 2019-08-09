@@ -42,6 +42,7 @@ nnoremap <C-x>ck :<C-u>call <SID>change_case("ck")<CR>
 nnoremap <C-x>kc :<C-u>call <SID>change_case("kc")<CR>
 nnoremap <C-x>ks :<C-u>call <SID>change_case("ks")<CR>
 
+
 " The prefix key.
 nnoremap    [Tag]   <Nop>
 nmap    t [Tag]
@@ -69,3 +70,5 @@ nmap sa <Plug>(operator-surround-append)
 nmap sd <Plug>(operator-surround-delete)
 nmap sr <Plug>(operator-surround-replace)
 nmap y <Plug>(operator-stay-cursor-yank)
+
+nnoremap <silent> yy :yank<CR>

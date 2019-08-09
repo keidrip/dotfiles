@@ -14,9 +14,10 @@ function set_proxy() {
   git config --global http.proxy $proxy
   git config --global https.proxy $proxy
 
-  echo "https-proxy=http://${proxy}/" >> ~/.npmrc
-  echo "registry=http://registry.npmjs.org/" >> ~/.npmrc
-  echo "proxy=http://${proxy}/" >> ~/.npmrc
+  # echo "" > ~/.npmrc
+  # echo "https-proxy=http://${proxy}/" >> ~/.npmrc
+  # echo "registry=http://registry.npmjs.org/" >> ~/.npmrc
+  # echo "proxy=http://${proxy}/" >> ~/.npmrc
 
   export no_proxy="localhost, 192.168.0.0/16"
   export NO_PROXY="$no_proxy"
@@ -35,7 +36,7 @@ function unset_proxy() {
   git config --global --unset http.proxy
   git config --global --unset https.proxy
 
-  echo "" > ~/.npmrc
+  # echo "" > ~/.npmrc
 
   unset no_proxy
   unset NO_PROXY
