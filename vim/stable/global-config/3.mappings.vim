@@ -72,3 +72,6 @@ nmap sr <Plug>(operator-surround-replace)
 nmap y <Plug>(operator-stay-cursor-yank)
 
 nnoremap <silent> yy :yank<CR>
+
+" vista
+nmap <C-a> :Vista!!<CR>
