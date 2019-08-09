@@ -15,6 +15,7 @@ call plug#begin()
 "" [general]
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'cohama/lexima.vim'
+" Plug 'Townk/vim-autoclose'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -69,3 +70,10 @@ Plug 'hashivim/vim-terraform', { 'for': ['tf', 'terraform'] }
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['tf', 'Dockerfile'] }
 
 call plug#end()
+
+
+
+
+
+
+
