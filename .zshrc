@@ -225,30 +225,30 @@
       zle -Rc
       zle reset-prompt
   }
-  zle -N peco-select-history
+  zle     -N   peco-select-history
   bindkey '^r' peco-select-history
 }
 
 # <not use>
 : "fzf history" && {
-  # fzf-history-widget() {
-  # local selected num
-  # setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
-  # selected=( $(fc -rl 1 |
-  #   FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m" $(__fzfcmd)) )
-  # local ret=$?
-  # if [ -n "$selected" ]; then
-  #   num=$selected[1]
-  #   if [ -n "$num" ]; then
-  #     zle vi-fetch-history -n $num
+  # function fzf-history-widget() {
+  #   local selected num
+  #   setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
+  #   selected=( $(fc -rl 1 |
+  #     FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m" $(__fzfcmd)) )
+  #   local ret=$?
+  #   if [ -n "$selected" ]; then
+  #     num=$selected[1]
+  #     if [ -n "$num" ]; then
+  #       zle vi-fetch-history -n $num
+  #     fi
   #   fi
-  # fi
-  # zle redisplay
-  # typeset -f zle-line-init >/dev/null && zle zle-line-init
-  # return $ret
+  #   zle redisplay
+  #   typeset -f zle-line-init >/dev/null && zle zle-line-init
+  #   return $ret
   # }
   # zle     -N   fzf-history-widget
-  # bindkey '^R' fzf-history-widget
+  # bindkey '^t' fzf-history-widget
 }
 
 : "tmux refresh" && {
