@@ -1,5 +1,7 @@
-" let g:lsp_async_completion = 1 " async completion by lsp
-let g:lsp_diagnostics_enabled = 0 " use ale to cieck errors
+let g:lsp_async_completion = 1 " async completion by lsp
+" let g:lsp_diagnostics_enabled = 0 " use ale to cieck errors
+" let g:lsp_signs_enabled = 1         " enable signs
+" let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 
 if executable('rls')
   augroup LspRust
@@ -24,3 +26,9 @@ if executable('gopls')
     autocmd FileType go setlocal omnifunc=lsp#complete
   augroup END
 endif
+
+
+" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+" let g:lsp_signs_error = {'text': '✗'}
+" let g:lsp_signs_warning = {'text': '‼'} " icons require GUI
+" let g:lsp_signs_hint = {'text': '⬥ ok'} " icons require GUI

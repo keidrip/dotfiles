@@ -1,6 +1,6 @@
 set runtimepath+=~/dotfiles/
 
 runtime! vim/init/*.vim
-runtime! vim/plugins/*.vim
-
+runtime! vim/stable/*/*.vim
+" runtime! vim/preview/*/*.vim
 

@@ -52,6 +52,5 @@ set list
 filetype plugin indent on
 
 "" vim-anzu
-set statusline+=%{anzu#search_status()}
 
 syntax on
