@@ -15,7 +15,6 @@ call plug#begin()
 "" [general]
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'cohama/lexima.vim'
-" Plug 'Townk/vim-autoclose'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -24,9 +23,7 @@ Plug 'LeafCage/yankround.vim'
 Plug 'osyo-manga/vim-anzu'
 Plug 'tpope/vim-dispatch'
 Plug 'itchyny/lightline.vim'
-" Plug 'soramugi/auto-ctags.vim'
 Plug 'liuchengxu/vista.vim'
-" Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'lambdalisue/vim-unified-diff'
@@ -51,7 +48,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
 
 " [html/css]
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript'] }
