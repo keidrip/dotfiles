@@ -1,18 +1,16 @@
-" echo "5.autocmd.vim"
+" Example code here.
+"
+" autocmd BufReadPost quickfix setlocal modifiable
+" 	\ | silent exe 'g/^/s//\=line(".")." "/'
+" 	\ | setlocal nomodifiable
 
-augroup GeneralAutocmdInVimRC
+augroup GeneralAutocmdSetting
   autocmd!
   autocmd BufWritePre * :%s/\s\+$//ge
   autocmd VimEnter * nested if @% != '' | :NERDTreeFind | wincmd p | endif
   autocmd InsertLeave * set nopaste
   autocmd QuickFixCmdPost *grep* cwindow
   autocmd Filetype json setl conceallevel=0
-augroup END
-
-augroup QuickRunToCargoRun
-  autocmd!
-  let g:quickrun_config = {}
-  autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
 augroup END
 
 augroup HighlightIdegraphicSpace
@@ -36,4 +34,11 @@ augroup END
 augroup EmmetSetting
   autocmd!
   autocmd FileType html,css,scss,javascript EmmetInstall
+augroup END
+
+augroup QuickRunSetting
+  autocmd!
+  autocmd Filetype quickrun set syntax=zsh
+  let g:quickrun_config = {}
+  autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
 augroup END
