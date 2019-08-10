@@ -48,9 +48,3 @@ augroup VimLspSetting
   autocmd FileType rust,go nmap gd <plug>(lsp-definition)
 augroup END
 
-augroup GoDebugSetting
-  autocmd!
-  autocmd FileType go nnoremap <Leader>got :GoToggleBreakpoint<CR>
-  autocmd FileType go nnoremap <Leader>god :GoDebug<CR>
-augroup END
-

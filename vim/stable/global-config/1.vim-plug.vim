@@ -56,11 +56,8 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript'] }
 
 " [go]
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'tpope/vim-pathogen', { 'for': 'go' } " for vim-godebug
-Plug 'jodosha/vim-godebug', { 'for': 'go' }
 
 " [terraform]
-"
 Plug 'hashivim/vim-terraform', { 'for': ['tf', 'terraform'] }
 
 " [dockerfile]

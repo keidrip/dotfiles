@@ -7,19 +7,18 @@ echo "Install homebrew and libraries"
 echo "-----------------------------------------------------";
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
+exec $SHELL -l
 
-# brew
-brew install peco wget tmux zsh nkf tree ripgrep fd fzf tig fzy exa python jq git-secrets bat watch dep ghq git
+brew install \
+  go peco wget tmux zsh nkf tree ripgrep fd fzf tig fzy exa \
+  python jq git-secrets bat watch ghq git \
+  kubectl kubectx kubernetes-helm
 brew install python@2
 exec $SHELL -l
 
-# k8s
-brew install kubectl kubectx kubernetes-helm caskroom/cask/minikube
-
-# neovim
 brew install neovim/neovim/neovim
-brew tap universal-ctags/universal-ctags
-brew install --HEAD universal-ctags --with-libyaml
+# brew tap universal-ctags/universal-ctags
+# brew install --HEAD universal-ctags --with-libyaml
 
 # anyenv
 git clone https://github.com/riywo/anyenv ~/.anyenv
@@ -52,7 +51,7 @@ mkdir -p ~/.config/peco/
 mkdir -p ~/.hammerspoon/
 mkdir ~/.cache
 mkdir ~/.local
-mkdir ~/.ctags.d
+# mkdir ~/.ctags.d
 ln -s ~/dotfiles/.snippet ~/.snippet
 ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
@@ -62,7 +61,7 @@ ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
 ln -s ~/dotfiles/.tern-project ~/.tern-project
 ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 ln -s ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
-ln -s ~/dotfiles/.ctags ~/.ctags.d/config.ctags
+# ln -s ~/dotfiles/.ctags ~/.ctags.d/config.ctags
 cp ~/dotfiles/.switch-proxy.osx ~/.switch-proxy
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 wget -O ~/Library/Fonts/RictyDiminished-Regular.ttf https://github.com/edihbrandon/RictyDiminished/raw/master/RictyDiminished-Regular.ttf
@@ -97,6 +96,7 @@ echo "Setup Other";
 echo "-----------------------------------------------------";
 go get github.com/golangci/golangci-lint/cmd/golangci-lint
 go get golang.org/x/tools/gopls@latest
+go get github.com/go-delve/delve/cmd/dlv
 vim +":PlugInstall" +":setfiletype go" +":GoInstallBinaries" +qa
 npm i -g npm-check-updates neovim
 
