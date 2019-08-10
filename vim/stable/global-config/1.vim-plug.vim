@@ -48,14 +48,14 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
 
 " [html/css]
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript'] }
 
-" [php]
-Plug 'lvht/phpcd.vim', { 'for': ['php'] }
-
 " [go]
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'tpope/vim-pathogen', { 'for': 'go' } " for vim-godebug
 Plug 'jodosha/vim-godebug', { 'for': 'go' }
 

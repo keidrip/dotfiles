@@ -31,10 +31,8 @@ nnoremap <Leader>t :new \| :terminal<CR>
 nnoremap <Leader>T :tabnew \| :terminal<CR>
 nnoremap <Leader>vt :vne \| :terminal<CR>
 nnoremap <Leader>n :ALENextWrap<CR>
-nnoremap <Leader>got :GoToggleBreakpoint<CR>
-nnoremap <Leader>god :GoDebug<CR>
-nmap <C-]> :tab <CR>:exec("tjump ".expand("<cword>"))<CR>
-nmap <leader><C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" nmap <C-]> :tab <CR>:exec("tjump ".expand("<cword>"))<CR>
+" nmap <leader><C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <C-x>sc :<C-u>call <SID>change_case("sc")<CR>
 nnoremap <C-x>sk :<C-u>call <SID>change_case("sk")<CR>
 nnoremap <C-x>cs :<C-u>call <SID>change_case("cs")<CR>
@@ -79,3 +77,4 @@ nmap <C-a> :Vista!!<CR>
 " not yank typed x and s
 nnoremap x "_x
 nnoremap s "_s
+

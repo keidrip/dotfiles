@@ -42,3 +42,15 @@ augroup QuickRunSetting
   let g:quickrun_config = {}
   autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
 augroup END
+
+augroup VimLspSetting
+  autocmd!
+  autocmd FileType rust,go nmap gd <plug>(lsp-definition)
+augroup END
+
+augroup GoDebugSetting
+  autocmd!
+  autocmd FileType go nnoremap <Leader>got :GoToggleBreakpoint<CR>
+  autocmd FileType go nnoremap <Leader>god :GoDebug<CR>
+augroup END
+
