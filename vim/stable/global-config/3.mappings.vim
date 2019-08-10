@@ -75,3 +75,7 @@ nnoremap <silent> yy :yank<CR>
 
 " vista
 nmap <C-a> :Vista!!<CR>
+
+" not yank typed x and s
+nnoremap x "_x
+nnoremap s "_s

@@ -10,6 +10,7 @@ augroup GeneralAutocmdInVimRC
 augroup END
 
 augroup QuickRunToCargoRun
+  autocmd!
   let g:quickrun_config = {}
   autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
 augroup END
@@ -32,11 +33,7 @@ augroup ColorSchemeSetting
   autocmd ColorScheme * hi Normal ctermbg=none
 augroup END
 
-augroup NERDTreeSetting
-  autocmd!
-  autocmd BufEnter * call SyncNERDTree()
-augroup END
-
 augroup EmmetSetting
+  autocmd!
   autocmd FileType html,css,scss,javascript EmmetInstall
 augroup END
