@@ -49,7 +49,6 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
-Plug 'prabirshrestha/asyncomplete-file.vim'
 
 " [html/css]
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript'] }
