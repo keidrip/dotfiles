@@ -72,9 +72,13 @@ vmap y <Plug>(operator-stay-cursor-yank)
 nnoremap <silent> yy :yank<CR>
 
 " vista
-nmap <C-a> :Vista!!<CR>
+nmap <C-q> :Vista!!<CR>
 
 " not yank typed x and s
 nnoremap x "_x
 nnoremap s "_s
+
+" move by byte unit on insert mode
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 
