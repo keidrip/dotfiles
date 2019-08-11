@@ -64,10 +64,10 @@ nmap # <Plug>(anzu-sharp-with-echo)
 nnoremap <C-e> :NERDTreeToggle<cr>
 
 "" operetor-user
-nmap sa <Plug>(operator-surround-append)
-nmap sd <Plug>(operator-surround-delete)
-nmap sr <Plug>(operator-surround-replace)
-nmap y <Plug>(operator-stay-cursor-yank)
+vmap sa <Plug>(operator-surround-append)
+vmap sd <Plug>(operator-surround-delete)
+vmap sr <Plug>(operator-surround-replace)
+vmap y <Plug>(operator-stay-cursor-yank)
 
 nnoremap <silent> yy :yank<CR>
 

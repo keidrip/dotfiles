@@ -10,7 +10,6 @@ au User asyncomplete_setup call asyncomplete#register_source({
       \ 'whitelist': ['*'],
       \ 'completor': function('s:my_neosnippet_completor'),
       \ })
-
 function! s:my_neosnippet_completor(opt, ctx) abort
     let l:snips = values(neosnippet#helpers#get_completion_snippets())
 
@@ -30,3 +29,25 @@ function! s:my_neosnippet_completor(opt, ctx) abort
     call asyncomplete#complete(a:opt['name'], a:ctx, l:startcol, l:matches)
 endfunction
 
+"
+" prabirshrestha/asyncomplete-buffer.vim
+"
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': -1,
+    \  },
+    \ }))
+
+"
+" prabirshrestha/asyncomplete-file.vim
+"
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
