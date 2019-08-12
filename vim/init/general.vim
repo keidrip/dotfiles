@@ -39,6 +39,7 @@ set wrap
 set wildmode=longest:full,full
 set ignorecase
 set completeopt=noinsert,menuone,noselect
+" set completeopt=noinsert,menuone,noselect,preview " use +preview when nvim 0.4 released
 set wildmenu
 set history=5000
 set guifont=Cica:h15

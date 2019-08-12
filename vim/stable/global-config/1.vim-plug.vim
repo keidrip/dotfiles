@@ -42,6 +42,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf' " installed fzf via brew
 Plug 'junegunn/fzf.vim'
 Plug 'thinca/vim-quickrun'
+" Plug 'rhysd/git-messenger.vim' " wait for nvim 0.4.0
 
 " [lsp]
 Plug 'prabirshrestha/vim-lsp'
