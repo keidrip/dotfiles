@@ -60,11 +60,13 @@ ln -s ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 # cp ~/dotfiles/.switch-proxy.osx ~/.switch-proxy
 
-# git secrets
+# git config
 git secrets --register-aws --global
 git secrets --install ~/.git-templates/git-secrets
 git config --global init.templatedir '~/.git-templates/git-secrets'
 git config --global credential.helper osxkeychain
+git config --global user.name "ktrysmt"
+git config --global user.email "kotaro.yoshimatsu@gmail.com"
 
 # go
 mkdir -p ~/project/bin
