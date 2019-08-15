@@ -2,11 +2,8 @@
 set -o pipefail
 set -vxeu
 
-echo "-----------------------------------------------------";
-echo "Install homebrew and libraries"
-echo "-----------------------------------------------------";
+# brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew update
 exec $SHELL -l
 
 brew install \
@@ -23,6 +20,8 @@ brew install neovim/neovim/neovim
 # anyenv
 git clone https://github.com/riywo/anyenv ~/.anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
+exec $SHELL -l
+anyenv install --init
 eval "$(anyenv init -)"
 exec $SHELL -l
 
@@ -30,19 +29,18 @@ exec $SHELL -l
 mkdir -p $(anyenv root)/plugins
 git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 anyenv install nodenv
-anyenv install rbenv
-nodenv install v10.15.1
+eval "$(anyenv init -)"
+exec $SHELL -l
+nodenv install 12.8.0
 nodenv rehash
-nodenv global v10.15.1
+nodenv global 12.8.0
+# anyenv install rbenv
 
 # rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 
-echo "-----------------------------------------------------";
-echo "Setup my env"
-echo "-----------------------------------------------------";
-# general
+# symlink
 cd ~/
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 git clone https://github.com/ktrysmt/dotfiles  ~/dotfiles
