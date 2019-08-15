@@ -1,21 +1,18 @@
 #!/bin/bash
 set -o pipefail
-set -vxeu
+set -e
+
+# type it before running `sudo :`
 
 # brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-exec $SHELL -l
-
 brew install \
   go peco wget tmux zsh nkf tree ripgrep fd fzf tig fzy exa \
   python jq git-secrets bat watch ghq git \
   kubectl kubectx kubernetes-helm
 brew install python@2
-exec $SHELL -l
-
 brew install neovim/neovim/neovim
-# brew tap universal-ctags/universal-ctags
-# brew install --HEAD universal-ctags --with-libyaml
+exec $SHELL -l
 
 # anyenv
 git clone https://github.com/riywo/anyenv ~/.anyenv
@@ -25,7 +22,7 @@ anyenv install --init
 eval "$(anyenv init -)"
 exec $SHELL -l
 
-# rbenv and nodenv
+# nodenv
 mkdir -p $(anyenv root)/plugins
 git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 anyenv install nodenv
@@ -34,11 +31,12 @@ exec $SHELL -l
 nodenv install 12.8.0
 nodenv rehash
 nodenv global 12.8.0
-# anyenv install rbenv
+exec $SHELL -l
 
 # rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
+# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
 
 # symlink
 cd ~/
@@ -49,26 +47,26 @@ mkdir -p ~/.config/peco/
 mkdir -p ~/.hammerspoon/
 mkdir ~/.cache
 mkdir ~/.local
-# mkdir ~/.ctags.d
 ln -s ~/dotfiles/.snippet ~/.snippet
 ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tigrc ~/.tigrc
-ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
+# ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
+ln -s ~/dotfiles/.tmux.conf.osx.v2.9 ~/.tmux.conf
 ln -s ~/dotfiles/.tern-project ~/.tern-project
 ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 ln -s ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
-# ln -s ~/dotfiles/.ctags ~/.ctags.d/config.ctags
-cp ~/dotfiles/.switch-proxy.osx ~/.switch-proxy
 cp ~/dotfiles/.gitconfig ~/.gitconfig
-# wget -O ~/Library/Fonts/RictyDiminished-Regular.ttf https://github.com/edihbrandon/RictyDiminished/raw/master/RictyDiminished-Regular.ttf
-# wget -O ~/dotfiles/.hammerspoon/hyperex.lua https://raw.githubusercontent.com/hetima/hammerspoon-hyperex/master/hyperex.lua
-# ln -s ~/dotfiles/.hammerspoon/hyperex.lua ~/.hammerspoon/hyperex.lua
-# git secrets
+# cp ~/dotfiles/.switch-proxy.osx ~/.switch-proxy
+
+# git config
 git secrets --register-aws --global
 git secrets --install ~/.git-templates/git-secrets
 git config --global init.templatedir '~/.git-templates/git-secrets'
+git config --global credential.helper osxkeychain
+git config --global user.name "ktrysmt"
+git config --global user.email "kotaro.yoshimatsu@gmail.com"
 
 # go
 mkdir -p ~/project/bin
@@ -98,12 +96,10 @@ brew tap caskroom/cask
 brew cask install appcleaner google-japanese-ime iterm2 shiftit hyperswitch clipy docker qblocker hammerspoon visual-studio-code google-chrome 
 brew cask install virtualbox
 brew cask install vagrant
+brew cask install karabiner-elements
 
-#brew cask install flux alfred itsycal keybase
-
-#or use 'https://s3.amazonaws.com/LACRM_blog/createGcApp.dmg'
-
-# "Rested tasks"
+# the final task
 sudo sh -c "echo $(which zsh) >> /etc/shells";
 chsh -s $(which zsh)
 
+# cica font: https://github.com/miiton/Cica/releases
