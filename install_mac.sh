@@ -14,8 +14,6 @@ brew install python@2
 exec $SHELL -l
 
 brew install neovim/neovim/neovim
-# brew tap universal-ctags/universal-ctags
-# brew install --HEAD universal-ctags --with-libyaml
 
 # anyenv
 git clone https://github.com/riywo/anyenv ~/.anyenv
@@ -34,7 +32,7 @@ exec $SHELL -l
 nodenv install 12.8.0
 nodenv rehash
 nodenv global 12.8.0
-# anyenv install rbenv
+exec $SHELL -l
 
 # rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
@@ -49,22 +47,19 @@ mkdir -p ~/.config/peco/
 mkdir -p ~/.hammerspoon/
 mkdir ~/.cache
 mkdir ~/.local
-# mkdir ~/.ctags.d
 ln -s ~/dotfiles/.snippet ~/.snippet
 ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tigrc ~/.tigrc
-ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
+# ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
+ln -s ~/dotfiles/.tmux.conf.osx.v2.9 ~/.tmux.conf
 ln -s ~/dotfiles/.tern-project ~/.tern-project
 ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 ln -s ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
-# ln -s ~/dotfiles/.ctags ~/.ctags.d/config.ctags
-cp ~/dotfiles/.switch-proxy.osx ~/.switch-proxy
 cp ~/dotfiles/.gitconfig ~/.gitconfig
-# wget -O ~/Library/Fonts/RictyDiminished-Regular.ttf https://github.com/edihbrandon/RictyDiminished/raw/master/RictyDiminished-Regular.ttf
-# wget -O ~/dotfiles/.hammerspoon/hyperex.lua https://raw.githubusercontent.com/hetima/hammerspoon-hyperex/master/hyperex.lua
-# ln -s ~/dotfiles/.hammerspoon/hyperex.lua ~/.hammerspoon/hyperex.lua
+# cp ~/dotfiles/.switch-proxy.osx ~/.switch-proxy
+
 # git secrets
 git secrets --register-aws --global
 git secrets --install ~/.git-templates/git-secrets
@@ -98,12 +93,10 @@ brew tap caskroom/cask
 brew cask install appcleaner google-japanese-ime iterm2 shiftit hyperswitch clipy docker qblocker hammerspoon visual-studio-code google-chrome 
 brew cask install virtualbox
 brew cask install vagrant
+brew cask install karabiner-elements
 
-#brew cask install flux alfred itsycal keybase
-
-#or use 'https://s3.amazonaws.com/LACRM_blog/createGcApp.dmg'
-
-# "Rested tasks"
+# the final task
 sudo sh -c "echo $(which zsh) >> /etc/shells";
 chsh -s $(which zsh)
 
+# cica font: https://github.com/miiton/Cica/releases
