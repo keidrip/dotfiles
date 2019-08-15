@@ -1,19 +1,18 @@
 #!/bin/bash
 set -o pipefail
-set -vxeu
+set -e
+
+# type it before running `sudo :`
 
 # brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-exec $SHELL -l
-
 brew install \
   go peco wget tmux zsh nkf tree ripgrep fd fzf tig fzy exa \
   python jq git-secrets bat watch ghq git \
   kubectl kubectx kubernetes-helm
 brew install python@2
-exec $SHELL -l
-
 brew install neovim/neovim/neovim
+exec $SHELL -l
 
 # anyenv
 git clone https://github.com/riywo/anyenv ~/.anyenv
@@ -23,7 +22,7 @@ anyenv install --init
 eval "$(anyenv init -)"
 exec $SHELL -l
 
-# rbenv and nodenv
+# nodenv
 mkdir -p $(anyenv root)/plugins
 git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 anyenv install nodenv
@@ -37,6 +36,7 @@ exec $SHELL -l
 # rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
+# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
 
 # symlink
 cd ~/
