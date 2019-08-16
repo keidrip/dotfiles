@@ -31,15 +31,6 @@ nnoremap <Leader>t :new \| :terminal<CR>
 nnoremap <Leader>T :tabnew \| :terminal<CR>
 nnoremap <Leader>vt :vne \| :terminal<CR>
 nnoremap <Leader>n :ALENextWrap<CR>
-" nmap <C-]> :tab <CR>:exec("tjump ".expand("<cword>"))<CR>
-" nmap <leader><C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-nnoremap <C-x>sc :<C-u>call <SID>change_case("sc")<CR>
-nnoremap <C-x>sk :<C-u>call <SID>change_case("sk")<CR>
-nnoremap <C-x>cs :<C-u>call <SID>change_case("cs")<CR>
-nnoremap <C-x>ck :<C-u>call <SID>change_case("ck")<CR>
-nnoremap <C-x>kc :<C-u>call <SID>change_case("kc")<CR>
-nnoremap <C-x>ks :<C-u>call <SID>change_case("ks")<CR>
-
 
 " The prefix key.
 nnoremap    [Tag]   <Nop>
@@ -82,3 +73,35 @@ nnoremap s "_s
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
+"" change case (snake,camel,kebab)
+nnoremap <C-x>sc :<C-u>call <SID>change_case("sc")<CR>
+nnoremap <C-x>sk :<C-u>call <SID>change_case("sk")<CR>
+nnoremap <C-x>cs :<C-u>call <SID>change_case("cs")<CR>
+nnoremap <C-x>ck :<C-u>call <SID>change_case("ck")<CR>
+nnoremap <C-x>kc :<C-u>call <SID>change_case("kc")<CR>
+nnoremap <C-x>ks :<C-u>call <SID>change_case("ks")<CR>
+function! s:change_case(v1, ...)
+  let t = a:v1
+  let p = getpos(".")
+  if t == "sc"
+    let s = substitute(expand("<cword>"), "_\\(.\\)", "\\u\\1", "g")
+    execute ":normal diw"
+  elseif t == "sk"
+    let s = substitute(expand("<cword>"), "_", "-", "g")
+    execute ":normal diw"
+  elseif t == "cs"
+    let s = substitute(expand("<cword>"), "\\(\\u\\)", "_\\l\\1", "g")
+    execute ":normal diw"
+  elseif t == "ck"
+    let s = substitute(expand("<cword>"), "\\(\\u\\)", "-\\l\\1", "g")
+    execute ":normal diw"
+  elseif t == "kc"
+    let s = substitute(expand("<cWORD>"), "-\\(.\\)", "\\u\\1", "g")
+    execute ":normal diW"
+  elseif t == "ks"
+    let s = substitute(expand("<cWORD>"), "-", "_", "g")
+    execute ":normal diW"
+  endif
+  execute ":normal i" . s
+  call setpos(".", p)
+endfunction
