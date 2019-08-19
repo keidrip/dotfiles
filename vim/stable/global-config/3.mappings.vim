@@ -8,7 +8,7 @@ tnoremap <ESC> <C-\><C-n>
 nnoremap cn *Ncgn
 nnoremap cN *NcgN
 nnoremap <Leader>%s  :%s/\v
-nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR><ESC>
 nnoremap <C-g> :echo expand('%:p')<Return>
 nnoremap <Leader>co :copen<cr>
 nnoremap <Leader>cl :cclose<cr>
