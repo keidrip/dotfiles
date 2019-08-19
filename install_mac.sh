@@ -99,6 +99,9 @@ brew cask install vagrant
 brew cask install karabiner-elements
 brew cask install michaelvillar-timer
 
+# the other
+cp -Rp /System/Library/CoreServices/ScreenSaverEngine.app /Applications/lock.app
+
 # the final task
 sudo sh -c "echo $(which zsh) >> /etc/shells";
 chsh -s $(which zsh)

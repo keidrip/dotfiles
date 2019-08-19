@@ -65,8 +65,8 @@ nnoremap <silent> yy :yank<CR>
 " vista
 nmap <C-q> :Vista!!<CR>
 
-" not yank typed x and s
-nnoremap x "_x
+" not yank typed s
+" nnoremap x "_x
 nnoremap s "_s
 
 " move by byte unit on insert mode
