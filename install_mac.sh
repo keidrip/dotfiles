@@ -12,6 +12,8 @@ brew install \
   kubectl kubectx kubernetes-helm
 brew install python@2
 brew install neovim/neovim/neovim
+brew tap universal-ctags/universal-ctags
+brew install --HEAD universal-ctags --with-libyaml
 exec $SHELL -l
 
 # anyenv
