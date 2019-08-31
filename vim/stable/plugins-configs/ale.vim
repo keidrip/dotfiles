@@ -2,9 +2,9 @@
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_fixers = {
   \ 'ruby': ['rubocop'],
-	\ 'go'   : ['goimports'],
   \ 'rust': ['rustfmt'],
 \}
+"	\ 'go'  : ['goimports'],
 
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
