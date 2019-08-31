@@ -7,7 +7,6 @@
 augroup GeneralAutocmdSetting
   autocmd!
   autocmd BufWritePre * :%s/\s\+$//ge
-  autocmd VimEnter * nested if @% != '' | :NERDTreeFind | wincmd p | endif
   autocmd InsertLeave * set nopaste
   autocmd QuickFixCmdPost *grep* cwindow
   autocmd Filetype json setl conceallevel=0

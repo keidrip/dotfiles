@@ -51,9 +51,6 @@ nmap N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 
-"" nerdtree
-nnoremap <C-e> :NERDTreeToggle<cr>
-
 "" operetor-user
 vmap sa <Plug>(operator-surround-append)
 vmap sd <Plug>(operator-surround-delete)
