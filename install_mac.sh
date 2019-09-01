@@ -91,6 +91,7 @@ go get golang.org/x/tools/gopls
 go get github.com/go-delve/delve/cmd/dlv
 vim +":PlugInstall" +":setfiletype go" +":GoInstallBinaries" +qa
 npm i -g npm-check-updates neovim
+# npm i -g yaml-language-server
 
 # brew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";

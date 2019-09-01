@@ -27,6 +27,17 @@ if executable('gopls')
   augroup END
 endif
 
+" if executable('yaml-language-server')
+"   augroup LspYaml
+"     autocmd!
+"     autocmd User lsp_setup call lsp#register_server({
+"         \ 'name': 'yaml-lsp',
+"         \ 'cmd': ['yaml-language-server','--stdio'],
+"         \ 'whitelist': ['yaml'],
+"         \ })
+"     autocmd FileType yaml setlocal omnifunc=lsp#complete
+"   augroup END
+" endif
 
 " let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 " let g:lsp_signs_error = {'text': '✗'}
