@@ -81,6 +81,9 @@
   alias kex="kubectl exec -i -t"
   alias kns="kubens"
   alias kctx="kubectx"
+
+  alias py="python3"
+  alias vimf='vim $(fzf)'
 }
 
 : "completions for k8s" && {
@@ -122,7 +125,7 @@
 
   typeset -A abbreviations
   abbreviations=(
-      "fzvim"    "fzy | xargs vim"
+      "vimfx"    "fzy | xargs vim"
   )
 
   magic-abbrev-expand() {
