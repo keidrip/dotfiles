@@ -84,7 +84,7 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 pip2 install neovim
 pip3 install neovim
 ln -sf $(which nvim) /usr/local/bin/vim
-pip3 install python-language-server
+pip install 'python-language-server[all]'
 
 # sub tools
 go get github.com/golangci/golangci-lint/cmd/golangci-lint

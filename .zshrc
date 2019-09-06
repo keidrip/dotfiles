@@ -83,6 +83,7 @@
   alias kctx="kubectx"
 
   alias py="python3"
+  alias vi="vim"
   alias vimf='vim $(fzf)'
 }
 
