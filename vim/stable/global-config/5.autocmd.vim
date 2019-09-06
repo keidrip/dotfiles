@@ -44,6 +44,7 @@ augroup END
 
 augroup VimLspSetting
   autocmd!
-  autocmd FileType rust,go nmap gd <plug>(lsp-definition)
+  autocmd FileType rust,go,python nmap gd <plug>(lsp-definition)
+  autocmd BufWritePre *.py silent LspDocumentFormatSync
 augroup END
 
