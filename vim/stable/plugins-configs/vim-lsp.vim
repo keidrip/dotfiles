@@ -2,6 +2,7 @@ let g:lsp_async_completion = 1 " async completion by lsp
 let g:lsp_diagnostics_enabled = 0 " use ale to cieck errors
 " let g:lsp_signs_enabled = 1         " enable signs
 " let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+let g:lsp_hover_conceal = 0 " not use LspHover
 
 if executable('rls')
   augroup LspRust
