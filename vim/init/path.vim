@@ -30,12 +30,12 @@ function! s:pick_executable(pathspecs) abort
   endfor
   return ''
 endfunction
-let g:python_host_prog = s:pick_executable([
-      \ '/usr/local/bin/python2',
-      \ '/home/linuxbrew/.linuxbrew/bin/python2',
-      \ '/usr/bin/python2',
-      \ '/bin/python2',
-      \])
+" let g:python_host_prog = s:pick_executable([
+"       \ '/usr/local/bin/python2',
+"       \ '/home/linuxbrew/.linuxbrew/bin/python2',
+"       \ '/usr/bin/python2',
+"       \ '/bin/python2',
+"       \])
 let g:python3_host_prog = s:pick_executable([
       \ '/usr/local/bin/python3',
       \ '/home/linuxbrew/.linuxbrew/bin/python3',

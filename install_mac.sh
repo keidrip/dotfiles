@@ -10,7 +10,6 @@ brew install \
   go peco wget tmux zsh nkf tree ripgrep fd fzf tig fzy exa \
   python jq git-secrets bat watch ghq git \
   kubectl kubectx kubernetes-helm
-brew install python@2
 brew install neovim/neovim/neovim
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags --with-libyaml
@@ -81,7 +80,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir -p ~/.config/nvim/
 ln -s ~/.vimrc ~/.config/nvim/init.vim
-pip2 install neovim
 pip3 install neovim
 ln -sf $(which nvim) /usr/local/bin/vim
 pip3 install 'python-language-server[yapf]'
