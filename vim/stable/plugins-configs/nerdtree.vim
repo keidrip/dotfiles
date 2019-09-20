@@ -23,7 +23,6 @@ augroup NERDTreeSetting
 augroup END
 
 nnoremap <silent> <C-E> :NERDTreeTabsToggle<CR>
-nnoremap <silent> <Leader><C-E> :NERDTreeFind<CR>
 " nnoremap <silent> <C-E> :call <SID>SyncNERDTree()<CR>
 "
 " function! s:SyncNERDTree()
