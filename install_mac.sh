@@ -60,6 +60,8 @@ ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 ln -s ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 # cp ~/dotfiles/.switch-proxy.osx ~/.switch-proxy
+mkdir -p ~/.ipython/profile_default/
+echo "c.InteractiveShell.colors = 'Linux'" > ~/.ipython/profile_default/ipython_config.py
 
 # git config
 git secrets --register-aws --global
@@ -83,6 +85,7 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 pip3 install neovim
 ln -sf $(which nvim) /usr/local/bin/vim
 pip3 install 'python-language-server[yapf]'
+pip3 install ipdb
 
 # sub tools
 go get github.com/golangci/golangci-lint/cmd/golangci-lint
