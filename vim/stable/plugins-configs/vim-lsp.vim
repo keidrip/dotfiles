@@ -29,11 +29,28 @@ if executable('gopls')
 endif
 
 if executable('pyls')
-    au User lsp_setup call lsp#register_server({
+  augroup LspPython
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
         \ })
+  augroup END
+endif
+
+if executable('solargraph')
+  augroup LspRuby
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'solargraph',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+        \ 'whitelist': ['ruby'],
+        \ })
+  augroup END
+    "    \ 'initialization_options': {"diagnostics": "true"},
+    "    \ 'cmd': {server_info->['solargraph','stdio']},
+    " \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
 endif
 
 " if executable('yaml-language-server')
