@@ -103,6 +103,7 @@ brew cask install virtualbox
 brew cask install vagrant
 brew cask install karabiner-elements
 brew cask install michaelvillar-timer
+brew cask install smcfancontrol
 
 # the other
 cp -Rp /System/Library/CoreServices/ScreenSaverEngine.app /Applications/lock.app
