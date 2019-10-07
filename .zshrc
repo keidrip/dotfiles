@@ -126,6 +126,7 @@
 
   typeset -A abbreviations
   abbreviations=(
+      "G"        " | grep"
       "vimfx"    "fzy | xargs vim"
   )
 
