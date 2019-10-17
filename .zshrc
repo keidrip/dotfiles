@@ -41,6 +41,8 @@
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
   # export FZF_DEFAULT_COMMAND='rg ""'
   export FZF_DEFAULT_OPTS="--reverse --height ${FZF_TMUX_HEIGHT:-80%} --select-1 --exit-0"
+  export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+  export FZF_CTRL_T_OPTS='--select-1 --exit-0 --preview "bat --color=always --style=header,grid --line-range :100 {}"'
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   # awscli
   [ -f /usr/local/bin/aws_zsh_completer.sh ] && source /usr/local/bin/aws_zsh_completer.sh
@@ -70,6 +72,8 @@
   alias tsync="tmux set-window-option synchronize-panes"
   alias batd="bat -l diff"
   alias bats="bat -l sh"
+  alias f='fzf --preview "bat --color=always --style=header,grid --line-range :100 {}"'
+
   # k8s
   alias k="kubectl"
   alias kg="kubectl get"
