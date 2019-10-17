@@ -108,3 +108,7 @@ git checkout origin/master -- path/to/file                                      
 rm -P                                                                                                                                           # overwrite 3 times before delete file
 ss -tap                                                                                                                                         # monitoring network status
 ps eww                                                                                                                                          # show used env per process
+echo '[{"hoge": 1234}, {"fuga":5678}]' | http POST http://localhost:3000/endpoint                                                               # post with pipe json body by httpie
+echo '[{"hoge": 1234}, {"fuga":5678}]' | curl -v  -H "Content-type: application/json" -d @- http://localhost:3000/endpoint                      # post with pipe json body by curl
+
+
