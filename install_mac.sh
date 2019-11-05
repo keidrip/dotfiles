@@ -8,8 +8,9 @@ set -e
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install \
   go peco wget tmux zsh nkf tree ripgrep fd fzf tig fzy exa \
-  python jq git-secrets bat watch ghq git \
+  python jq git-secrets bat watch ghq git diff-so-fancy \
   kubectl kubectx kubernetes-helm
+brew install tldr-pages/tldr/tldr
 brew install neovim/neovim/neovim
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags --with-libyaml
