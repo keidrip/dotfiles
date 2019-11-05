@@ -71,6 +71,7 @@ git config --global init.templatedir '~/.git-templates/git-secrets'
 git config --global credential.helper osxkeychain
 git config --global user.name "ktrysmt"
 git config --global user.email "kotaro.yoshimatsu@gmail.com"
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
 # go
 mkdir -p ~/project/bin
