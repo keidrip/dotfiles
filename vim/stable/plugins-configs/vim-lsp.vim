@@ -23,6 +23,16 @@ if executable('gopls')
         \ 'name': 'go-lang',
         \ 'cmd': {server_info->['gopls']},
         \ 'whitelist': ['go'],
+        \ 'workspace_config': {'gopls': {
+        \     'staticcheck': v:true,
+        \     'completeUnimported': v:true,
+        \     'caseSensitiveCompletion': v:true,
+        \     'usePlaceholders': v:true,
+        \     'completionDocumentation': v:true,
+        \     'watchFileChanges': v:true,
+        \     'hoverKind': 'SingleLine',
+        \     'deepCompletion': v:true,
+        \   }},
         \ })
     autocmd FileType go setlocal omnifunc=lsp#complete
   augroup END
