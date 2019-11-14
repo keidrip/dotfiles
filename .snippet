@@ -110,5 +110,5 @@ ss -tap                                                                         
 ps eww                                                                                                                                          # show used env per process
 echo '[{"hoge": 1234}, {"fuga":5678}]' | http POST http://localhost:3000/endpoint                                                               # post with pipe json body by httpie
 echo '[{"hoge": 1234}, {"fuga":5678}]' | curl -v  -H "Content-type: application/json" -d @- http://localhost:3000/endpoint                      # post with pipe json body by curl
-
-
+git stash pop --index                                                                                                                           # 変更を保存しつつ復元
+git stash -k                                                                                                                                    # not stagedなファイルだけ退避
