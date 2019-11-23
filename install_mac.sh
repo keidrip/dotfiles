@@ -100,7 +100,7 @@ npm i -g npm-check-updates neovim
 # brew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 brew tap caskroom/cask
-brew cask install appcleaner google-japanese-ime iterm2 shiftit hyperswitch clipy docker qblocker hammerspoon visual-studio-code google-chrome
+brew cask install appcleaner google-japanese-ime iterm2 shiftit hyperswitch clipy docker qblocker hammerspoon visual-studio-code google-chrome typora
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install karabiner-elements

@@ -89,6 +89,7 @@
   alias py="python3"
   alias vi="vim"
   alias vimf='vim $(fzf)'
+  alias typora='open -a typora'
 }
 
 : "completions for k8s" && {
