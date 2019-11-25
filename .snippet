@@ -11,7 +11,8 @@ dig -x localhost                                                                
 rg foo -g '!*.min.js'                                                                                                                           # exclude w/ rg
 rg foo -g '*.min.js'                                                                                                                            # include w/ rg
 WAIT=$(( RANDOM %= 30 )) sleep $WAIT && echo "foo"                                                                                              # jitter
-perl -i -pe 's/foo/bar/' text.txt                                                                                                               # overwrite replacement by PCRE
+perl -i -pe 's/foo/bar/' text.txt                                                                                                               # to overwrite replacement by PCRE
+perl -npe 's/(?<=-\d{2})T(?=\d{2}:)/ /g ; s/(?<=:\d{2})Z/ /g'"                                                                                  # to apply multi patterns as inline by PCRE
 cut -d' ' -f1,3                                                                                                                                 # cut
 history | cut -d " " -f 4-11                                                                                                                    # cut numbers of history
 find . -type f -regextype posix-egrep -regex ".*.(csv|txt)" ! -regex ".*./ruby/2.0/.*"                                                          # find w/ regex
