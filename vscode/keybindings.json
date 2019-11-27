@@ -101,5 +101,13 @@
       "key": "shift+alt+v",
       "command": "markdown.showPreview",
       "when": "editorLangId == 'markdown'"
+    },
+    {
+      "key": "shift+alt+z",
+      "command": "workbench.action.toggleZenMode"
+    },
+    {
+      "key": "cmd+k z",
+      "command": "-workbench.action.toggleZenMode"
     }
   ]
