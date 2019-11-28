@@ -103,7 +103,7 @@
       "when": "editorLangId == 'markdown'"
     },
     {
-      "key": "shift+alt+z",
+      "key": "ctrl+shift+z",
       "command": "workbench.action.toggleZenMode"
     },
     {

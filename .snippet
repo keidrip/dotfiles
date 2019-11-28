@@ -115,3 +115,6 @@ git stash pop --index                                                           
 git stash -k                                                                                                                                    # not stagedなファイルだけ退避
 stty sane                                                                                                                                       # fix broken terminal
 rg --files-with-matches SEARCH_TEXT                                                                                                             # show only filename
+export $(< /etc/environment grep -v "^#" | xargs)                                                                                               # dynamic loading of env
+[[ "${hoge}" =~ ^.*$ ]]  || exit 1                                                                                                              # pattern matching test by shell
+
