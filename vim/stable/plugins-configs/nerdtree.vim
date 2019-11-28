@@ -22,7 +22,12 @@ augroup NERDTreeSetting
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
+function! s:Nerdtreefind_if() abort
+     NERDTreeFind
+endfunction
+
 nnoremap <silent> <C-E> :NERDTreeTabsToggle<CR>
+nnoremap <silent> <C-W>f :call <SID>Nerdtreefind_if()<CR>
 " nnoremap <silent> <C-E> :call <SID>SyncNERDTree()<CR>
 "
 " function! s:SyncNERDTree()
