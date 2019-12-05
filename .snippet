@@ -33,6 +33,7 @@ openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -node
 while true; do { echo -e 'HTTP/1.1 200 OK\r\n'; } | nc -l 8000; done                                                                            # run dummy http server in 8000
 ssh BASTION_SERVER -L 8080:DB_SERVER:3306 -N # -f (<= backgroud flag)                                                                           # ssh forwarding (=8080=> local =22=> bastion =3306=> db)
 tmux swap-window -t 1                                                                                                                           # swap window on tmux
+tmux swap-pane -s  7.1  -t 7.2                                                                                                                  # swap pane in window, -s(src) -t(target) {window number}.{pane number(1-indexes)}
 git branch | colrm 1 2                                                                                                                          # list branch names
 openssl rand -base64 24                                                                                                                         # make random password easily
 cat /dev/urandom | tr -dc "[:alnum:]" | fold -w 12 | head -n 10                                                                                 # make random password
@@ -103,7 +104,7 @@ pidstat 1                                                                       
 iostat -xz 1                                                                                                                                    # view I/O performance per block device
 curl -s -L https://github.com/mruby/mruby/pull/605.patch | git am -                                                                             # merge remote pull request from github by curl
 curl -s -L https://github.com/masuidrive/mruby/commit/70b422a6f240a201993e75935b55a8dd497eb098.patch | git am -                                 # cherry-pick remote pull request from github by curl
-vim --startuptime /tmp/startuptime.txt
+vim --startuptime /tmp/startuptime.txt                                                                                                          # check start up time at vim
 ssh-keygen -t ed25519 -f ~/.ssh/filename                                                                                                        # generate ssh key
 git checkout origin/master -- path/to/file                                                                                                      # restore file or dir from a specific branch
 rm -P                                                                                                                                           # overwrite 3 times before delete file
