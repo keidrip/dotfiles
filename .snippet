@@ -118,4 +118,4 @@ stty sane                                                                       
 rg --files-with-matches SEARCH_TEXT                                                                                                             # show only filename
 export $(< /etc/environment grep -v "^#" | xargs)                                                                                               # dynamic loading of env
 [[ "${hoge}" =~ ^.*$ ]]  || exit 1                                                                                                              # pattern matching test by shell
-
+find /aaa/bbb/ccc | grep -v -E \^\[!-~\]\+\$ | tr '\n' '\0' | xargs -0 -I {} mv {} /xxx/yyy/zzz                                                 # find and xargs with zero option
