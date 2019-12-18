@@ -68,6 +68,7 @@
   alias gbc="~/dotfiles/bin/git-checkout-remote-branch"
   alias l="exa -lha"
   alias lt="exa -lhT"
+  alias ltt="exa -T"
   alias nswitch="source ~/.switch-proxy"
   alias tsync="tmux set-window-option synchronize-panes"
   alias batd="bat -l diff"
