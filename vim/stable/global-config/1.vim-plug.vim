@@ -12,8 +12,11 @@ endif
 
 call plug#begin()
 
+" [color]
+Plug 'KKPMW/moonshine-vim'
+" Plug 'kristijanhusak/vim-hybrid-material'
+
 "" [general]
-Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'cohama/lexima.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'

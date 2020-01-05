@@ -3,7 +3,6 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-set background=dark
 set sh=zsh
 set secure
 set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp,
