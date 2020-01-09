@@ -102,3 +102,4 @@ function! s:change_case(v1, ...)
   execute ":normal i" . s
   call setpos(".", p)
 endfunction
+

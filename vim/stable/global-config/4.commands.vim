@@ -1,5 +1,3 @@
-" echo "4.commands.vim"
-
 "" custom commands
 command! -nargs=* -complete=file Rg :tabnew | :silent grep --sort-files <args>
 command! -nargs=* -complete=file RgfastUnsort :tabnew | :silent grep <args>

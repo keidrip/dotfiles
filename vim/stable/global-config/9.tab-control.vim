@@ -1,5 +1,3 @@
-" echo "8.tab-control.vim"
-
 "" tab control
 function! s:SID_PREFIX()
   return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')

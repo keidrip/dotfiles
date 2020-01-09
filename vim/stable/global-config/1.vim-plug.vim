@@ -1,5 +1,3 @@
-" echo "7.plugin-settings.vim"
-
 "" Settings
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -12,9 +10,8 @@ endif
 
 call plug#begin()
 
-" [color]
+" [colorscheme]
 Plug 'KKPMW/moonshine-vim'
-" Plug 'kristijanhusak/vim-hybrid-material'
 
 "" [general]
 Plug 'cohama/lexima.vim'
@@ -45,6 +42,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf' " installed fzf via brew
 Plug 'junegunn/fzf.vim'
 Plug 'thinca/vim-quickrun'
+Plug 'terryma/vim-expand-region'
 " Plug 'rhysd/git-messenger.vim' " wait for nvim 0.4.0
 
 " [lsp]

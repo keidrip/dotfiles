@@ -1,2 +1,0 @@
-
-" colorscheme hybrid_material
