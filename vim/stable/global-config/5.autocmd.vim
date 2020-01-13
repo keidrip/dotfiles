@@ -24,10 +24,11 @@ augroup FiletypeGroup
   au BufNewFile,BufRead *.conf,*.conf.j2 set ft=conf
 augroup END
 
-augroup ColorSchemeSetting
+augroup GeneralColorSchemeSetting
   autocmd!
   autocmd ColorScheme * hi LineNr ctermfg=239
   autocmd ColorScheme * hi Normal ctermbg=none
+  autocmd ColorScheme * hi Todo ctermfg=230 ctermbg=none guifg=Yellow guibg=none
 augroup END
 
 augroup EmmetSetting
