@@ -121,3 +121,4 @@ export $(< /etc/environment grep -v "^#" | xargs)                               
 find /aaa/bbb/ccc | grep -v -E \^\[!-~\]\+\$ | tr '\n' '\0' | xargs -0 -I {} mv {} /xxx/yyy/zzz                                                 # find and xargs with zero option
 go clean -i -n github.com/motemen/ghq...                                                                                                        # print clean up commands for the package installed via `go get`.
 aws organizations list-accounts --query 'Accounts[?Name==`account-name`]'                                                                       # how to use jmespath
+git log -1 --format=%H                                                                                                                          # Docker image tag をつけるときに使う
