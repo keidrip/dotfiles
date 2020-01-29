@@ -52,7 +52,7 @@
   export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
   export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
   export PATH=$HOME/.rbenv/shims:$PATH
-
+  export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 }
 
 : "alias" && {

@@ -89,6 +89,17 @@ ln -sf $(which nvim) /usr/local/bin/vim
 pip3 install 'python-language-server[yapf]'
 pip3 install ipdb
 
+# k8s
+(
+  set -x; cd "$(mktemp -d)" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/v0.3.3/krew.{tar.gz,yaml}" &&
+  tar zxvf krew.tar.gz &&
+  KREW=./krew-"$(uname | tr '[:upper:]' '[:lower:]')_amd64" &&
+  "$KREW" install --manifest=krew.yaml --archive=krew.tar.gz &&
+  "$KREW" update
+)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 # sub tools
 go get github.com/golangci/golangci-lint/cmd/golangci-lint
 go get golang.org/x/tools/gopls
