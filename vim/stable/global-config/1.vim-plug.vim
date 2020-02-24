@@ -44,6 +44,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'terryma/vim-expand-region'
 " Plug 'rhysd/git-messenger.vim' " wait for nvim 0.4.0
+Plug 'RRethy/vim-illuminate'
 
 " [lsp]
 Plug 'prabirshrestha/vim-lsp'
