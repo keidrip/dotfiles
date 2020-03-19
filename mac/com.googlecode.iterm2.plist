@@ -4,6 +4,8 @@
 <dict>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -211,8 +213,12 @@
 	<string>148 75 606 469 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>1701 2765 918 423 -634 1050 3840 2160 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>0 450 592 577 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>281 1314 650 452 -419 1050 2560 1417 </string>
+	<string>-16 2140 490 327 -419 1050 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>-76 1231 570 377 -419 1050 2560 1440 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -849,7 +855,7 @@
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
-			<integer>8</integer>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1491,7 +1497,7 @@
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
-			<integer>8</integer>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1517,7 +1523,19 @@
 		<string>3.3.2</string>
 		<string>3.2.9</string>
 		<string>3.3.1</string>
+		<string>3.3.8</string>
 		<string>3.3.0</string>
+		<string>3.3.7</string>
+		<string>3.3.6</string>
+	</array>
+	<key>NoSyncBFPFavorites</key>
+	<array>
+		<string>Cica</string>
+	</array>
+	<key>NoSyncBFPRecents</key>
+	<array>
+		<string>Cica</string>
+		<string>Menlo</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -1529,9 +1547,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{-419, 1050}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{518, 823}</string>
+		<string>{219, 1713}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1542,7 +1560,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>540029823.01515698</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>9</integer>
+	<integer>13</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -2058,9 +2076,25 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2324,23 +2358,25 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-16T11:19:52Z</date>
+	<date>2020-02-17T04:11:58Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SwitchTabModifier</key>
 	<integer>9</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>9</integer>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1581317376</real>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.3.2</string>
+	<string>3.3.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

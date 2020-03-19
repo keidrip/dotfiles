@@ -125,6 +125,16 @@
       command helm "$@"
     }
   fi
+
+  # eksctl
+  if (which eksctl > /dev/null); then
+    function eksctl() {
+      if ! type __start_eksctl >/dev/null 2>&1; then
+          source <(command eksctl completion zsh)
+      fi
+      command eksctl "$@"
+    }
+  fi
 }
 
 
