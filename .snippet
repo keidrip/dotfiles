@@ -124,3 +124,4 @@ aws organizations list-accounts --query 'Accounts[?Name==`account-name`]'       
 git log -1 --format=%H                                                                                                                          # Docker image tag をつけるときに使う
 echo "hogefugapiyo" | grep -q -E "fu|po|pi"                                                                                                     # check with egrep to see if it exists
 /usr/bin/rkhunter --update -q || true                                                                                                           # when the exit code is non-zero
+find /home -type f -exec grep 'password' '{}' \; -exec cp '{}' . \;                                                                             # multi exec via find
