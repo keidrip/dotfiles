@@ -125,3 +125,5 @@ git log -1 --format=%H                                                          
 echo "hogefugapiyo" | grep -q -E "fu|po|pi"                                                                                                     # check with egrep to see if it exists
 /usr/bin/rkhunter --update -q || true                                                                                                           # when the exit code is non-zero
 find /home -type f -exec grep 'password' '{}' \; -exec cp '{}' . \;                                                                             # multi exec via find
+command < data.in &>> result.out                                                                                                                # append log with stdout and stderr
+command < data.in | tee -a result.out                                                                                                           # append log by tee
