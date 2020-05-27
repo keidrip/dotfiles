@@ -216,7 +216,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>0 450 592 577 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-16 2140 490 327 -419 1050 2560 1417 </string>
+	<string>843 1050 1277 1417 -440 1050 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-76 1231 570 377 -419 1050 2560 1440 </string>
 	<key>New Bookmarks</key>
@@ -1520,13 +1520,14 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.2</string>
-		<string>3.2.9</string>
-		<string>3.3.1</string>
-		<string>3.3.8</string>
-		<string>3.3.0</string>
-		<string>3.3.7</string>
 		<string>3.3.6</string>
+		<string>3.3.8</string>
+		<string>3.3.1</string>
+		<string>3.3.7</string>
+		<string>3.3.9</string>
+		<string>3.2.9</string>
+		<string>3.3.2</string>
+		<string>3.3.0</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -1547,9 +1548,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-419, 1050}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{219, 1713}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1560,7 +1561,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>540029823.01515698</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>13</integer>
+	<integer>15</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -2358,17 +2359,21 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-17T04:11:58Z</date>
+	<date>2020-05-21T02:56:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SwitchTabModifier</key>
 	<integer>9</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>9</integer>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>5</integer>
+	<key>TabViewType</key>
+	<integer>1</integer>
 	<key>UKCrashReporterLastCrashReportDate</key>
 	<real>1581317376</real>
 	<key>VisualIndicatorForEsc</key>
@@ -2376,7 +2381,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

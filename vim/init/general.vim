@@ -45,6 +45,9 @@ set showtabline=2
 set clipboard=unnamed
 set list
 
+" completion window
+set ph=20
+
 " 不可視文字を可視化する場合は以下をアンコメント
 " set listchars=tab:^-,trail:-,extends:»,precedes:«,nbsp:%
 filetype plugin indent on
