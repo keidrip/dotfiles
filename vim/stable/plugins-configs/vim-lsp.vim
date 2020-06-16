@@ -2,26 +2,24 @@ let g:lsp_async_completion = 1 " async completion by lsp
 let g:lsp_diagnostics_enabled = 0 " use ale to cieck errors
 " let g:lsp_signs_enabled = 1         " enable signs
 " let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
-let g:lsp_hover_conceal = 0 " not use LspHover
-
-" if executable('rls')
-"   augroup LspRust
-"     autocmd!
-"     autocmd User lsp_setup call lsp#register_server({
-"         \ 'name': 'rls',
-"         \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-"         \ 'whitelist': ['rust'],
-"         \ })
-"     autocmd FileType rust setlocal omnifunc=lsp#complete
-"   augroup END
-" endif
+let g:lsp_hover_conceal = 1 " not use LspHover
 
 if executable('rust-analyzer')
-  augroup LspRust
+  augroup LspRustAnalyzer
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
         \ 'name': 'rust-analyzer',
         \ 'cmd': {server_info->['rust-analyzer']},
+        \ 'whitelist': ['rust'],
+        \ })
+    autocmd FileType rust setlocal omnifunc=lsp#complete
+  augroup END
+elseif executable('rls')
+  augroup LspRustc
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
         \ 'whitelist': ['rust'],
         \ })
     autocmd FileType rust setlocal omnifunc=lsp#complete
