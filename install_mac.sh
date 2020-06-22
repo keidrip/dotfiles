@@ -7,7 +7,7 @@ set -e
 # brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install \
-  go peco wget tmux zsh nkf tree ripgrep fd fzf tig fzy exa \
+  go peco wget tmux zsh nkf tree ripgrep fd procs fzf tig fzy exa \
   python jq git-secrets bat watch ghq git diff-so-fancy \
   kubectl kubectx kubernetes-helm coreutils
 brew install tldr-pages/tldr/tldr
@@ -111,7 +111,7 @@ npm i -g npm-check-updates neovim
 # brew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 brew tap caskroom/cask
-brew cask install appcleaner kindle hiddenbar google-japanese-ime iterm2 shiftit hyperswitch clipy docker qblocker hammerspoon visual-studio-code google-chrome typora minikube scroll-reverser
+brew cask install appcleaner kindle hiddenbar google-japanese-ime iterm2 shiftit hyperswitch clipy docker qblocker hammerspoon visual-studio-code google-chrome typora minikube scroll-reverser mos
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install karabiner-elements
