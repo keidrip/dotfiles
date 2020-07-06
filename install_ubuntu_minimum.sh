@@ -3,12 +3,6 @@
 set -o pipefail
 set -vxeu
 
-# sudo password for vagrant
-if [ `who am i | awk '{print $1}'` = "vagrant" ]; then \
-  PASSWORD="vagrant";
-  sudo chown -R vagrant:vagrant /usr/local;
-fi;
-
 # linuxbrew
 sudo apt-get -qq -y update
 sudo apt-get -qq -y install build-essential curl file git

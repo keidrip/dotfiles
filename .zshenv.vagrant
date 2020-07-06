@@ -1,4 +1,0 @@
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/shims:$PATH"
-
-# zmodload zsh/zprof && zprof
