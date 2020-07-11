@@ -3,6 +3,8 @@ let g:lsp_diagnostics_enabled = 0 " use ale to cieck errors
 " let g:lsp_signs_enabled = 1         " enable signs
 " let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 let g:lsp_hover_conceal = 1 " not use LspHover
+let g:lsp_preview_float = 0
+let g:lsp_documentation_float = 0
 
 if executable('rust-analyzer')
   augroup LspRustAnalyzer
@@ -30,7 +32,7 @@ if executable('gopls')
   augroup LspGo
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'go-lang',
+        \ 'name': 'gopls',
         \ 'cmd': {server_info->['gopls']},
         \ 'whitelist': ['go'],
         \ 'workspace_config': {'gopls': {
@@ -38,9 +40,9 @@ if executable('gopls')
         \     'completeUnimported': v:true,
         \     'caseSensitiveCompletion': v:true,
         \     'usePlaceholders': v:true,
-        \     'completionDocumentation': v:true,
+        \     'completionDocumentation': v:false,
         \     'watchFileChanges': v:true,
-        \     'hoverKind': 'SingleLine',
+        \     'hoverKind': 'FullDocumentation',
         \     'deepCompletion': v:true,
         \   }},
         \ })
@@ -68,9 +70,6 @@ if executable('solargraph')
         \ 'whitelist': ['ruby'],
         \ })
   augroup END
-    "    \ 'initialization_options': {"diagnostics": "true"},
-    "    \ 'cmd': {server_info->['solargraph','stdio']},
-    " \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
 endif
 
 " if executable('yaml-language-server')

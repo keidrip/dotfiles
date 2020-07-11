@@ -69,6 +69,7 @@ nnoremap s "_s
 " move by byte unit on insert mode
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
+inoremap <C-c> <ESC>
 
 "" change case (snake,camel,kebab)
 nnoremap <C-x>sc :<C-u>call <SID>change_case("sc")<CR>
