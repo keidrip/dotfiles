@@ -4,7 +4,7 @@ let g:lsp_diagnostics_enabled = 0 " use ale to cieck errors
 " let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 let g:lsp_hover_conceal = 1 " not use LspHover
 
-if executable('rust-analyzer')
+if executable('rust-analyzer') && &ft=='rust'
   augroup LspRustAnalyzer
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
@@ -26,7 +26,7 @@ elseif executable('rls')
   augroup END
 endif
 
-if executable('gopls')
+if executable('gopls') && &ft=='go'
   augroup LspGo
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
@@ -48,7 +48,7 @@ if executable('gopls')
   augroup END
 endif
 
-if executable('pyls')
+if executable('pyls') && &ft=='python'
   augroup LspPython
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
@@ -59,7 +59,7 @@ if executable('pyls')
   augroup END
 endif
 
-if executable('solargraph')
+if executable('solargraph') && &ft=='ruby'
   augroup LspRuby
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
