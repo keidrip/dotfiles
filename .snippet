@@ -130,4 +130,4 @@ command < data.in &>> result.out                                                
 command < data.in | tee -a result.out                                                                                                           # append log by tee
 tar tvf layer.tar                                                                                                                               # look at the insite of tar
 cat event.json |grep -oP 'event_type":".*?"' | sort | uniq -c | sort -nr                                                                        # gnu grep w/ pcre
-
+pgrep -f -l tmux                                                                                                                                # grep pid and filepath
