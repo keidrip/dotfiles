@@ -132,3 +132,4 @@ tar tvf layer.tar                                                               
 cat event.json |grep -oP 'event_type":".*?"' | sort | uniq -c | sort -nr                                                                        # gnu grep w/ pcre
 pgrep -f -l tmux                                                                                                                                # grep pid and filepath
 git tag -d 0.6.3 && git push origin :0.6.3                                                                                                      # delete tag
+cat sample.json | grep -P '"key":".*?"'                                                                                                         # GNU grep w/ pcre
