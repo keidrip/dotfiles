@@ -70,6 +70,7 @@ ip -r a                                                                         
 echo $PATH | /usr/bin/sed 's/:/\'$'\n/g'                                                                                                        # print path
 patch -p0 < diff.patch                                                                                                                          # apply patch at same dir
 netstat -l                                                                                                                                      # port check 1 / リッスンポートを一覧表示する
+netstat -ltunp4                                                                                                                                 # port check 1'/ リッスンポートを一覧表示する(ipv4)
 ss -lntu                                                                                                                                        # port check 2 / リッスンポートを一覧表示する
 sudo nmap -n -PN -sT -sU -p- localhost                                                                                                          # port check 3 / リッスンポートを一覧表示する
 sudo lsof -i                                                                                                                                    # port check 4 / 使われているネットワークファルを一覧表示
@@ -127,3 +128,8 @@ echo "hogefugapiyo" | grep -q -E "fu|po|pi"                                     
 find /home -type f -exec grep 'password' '{}' \; -exec cp '{}' . \;                                                                             # multi exec via find
 command < data.in &>> result.out                                                                                                                # append log with stdout and stderr
 command < data.in | tee -a result.out                                                                                                           # append log by tee
+tar tvf layer.tar                                                                                                                               # look at the insite of tar
+cat event.json |grep -oP 'event_type":".*?"' | sort | uniq -c | sort -nr                                                                        # gnu grep w/ pcre
+pgrep -f -l tmux                                                                                                                                # grep pid and filepath
+git tag -d 0.6.3 && git push origin :0.6.3                                                                                                      # delete tag
+cat sample.json | grep -P '"key":".*?"'                                                                                                         # GNU grep w/ pcre
