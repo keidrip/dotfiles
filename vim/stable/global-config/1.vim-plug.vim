@@ -43,7 +43,6 @@ Plug '/usr/local/opt/fzf' " installed fzf via brew
 Plug 'junegunn/fzf.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'terryma/vim-expand-region'
-" Plug 'rhysd/git-messenger.vim' " wait for nvim 0.4.0
 Plug 'RRethy/vim-illuminate'
 Plug 'chase/vim-ansible-yaml'
 Plug 'ncm2/float-preview.nvim'
