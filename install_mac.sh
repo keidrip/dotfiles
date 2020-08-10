@@ -99,6 +99,7 @@ pip3 install ipdb
   "$KREW" update
 )
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+kubectl krew install tree open-svc
 
 # sub tools
 go get github.com/golangci/golangci-lint/cmd/golangci-lint
