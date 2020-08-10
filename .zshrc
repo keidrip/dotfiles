@@ -137,6 +137,16 @@
       command eksctl "$@"
     }
   fi
+
+  # kind
+  if (which kind > /dev/null); then
+    function kind() {
+      if ! type __start_kind >/dev/null 2>&1; then
+          source <(command kind completion zsh)
+      fi
+      command kind "$@"
+    }
+  fi
 }
 
 
