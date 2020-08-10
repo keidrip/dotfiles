@@ -92,7 +92,7 @@ pip3 install ipdb
 # k8s
 (
   set -x; cd "$(mktemp -d)" &&
-  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/v0.3.3/krew.{tar.gz,yaml}" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/krew.{tar.gz,yaml}" &&
   tar zxvf krew.tar.gz &&
   KREW=./krew-"$(uname | tr '[:upper:]' '[:lower:]')_amd64" &&
   "$KREW" install --manifest=krew.yaml --archive=krew.tar.gz &&
