@@ -8,7 +8,7 @@ set -e
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install \
   go peco wget tmux zsh nkf tree ripgrep fd procs fzf tig fzy exa \
-  python jq git-secrets bat watch ghq git diff-so-fancy \
+  python jq git-secrets bat watch ghq git diff-so-fancy kind \
   kubectl kubectx kubernetes-helm coreutils
 brew install tldr-pages/tldr/tldr
 brew install neovim/neovim/neovim
