@@ -46,7 +46,8 @@
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   # awscli
   [ -f /usr/local/bin/aws_zsh_completer.sh ] && source /usr/local/bin/aws_zsh_completer.sh
-  # k8s
+  # k8s/docker
+  export DOCKER_BUILDKIT=1
   export KREW_NO_UPGRADE_CHECK=1
   # other path
   export PATH="$HOME/.cargo/bin:$PATH"
