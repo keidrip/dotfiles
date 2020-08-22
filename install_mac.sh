@@ -49,6 +49,7 @@ mkdir -p ~/.config/peco/
 mkdir -p ~/.hammerspoon/
 mkdir ~/.cache
 mkdir ~/.local
+mkdir ~/.docker
 ln -s ~/dotfiles/.snippet ~/.snippet
 ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
@@ -60,6 +61,7 @@ ln -s ~/dotfiles/.tern-project ~/.tern-project
 ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 ln -s ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 cp ~/dotfiles/.gitconfig ~/.gitconfig
+cp ~/dotfiles/.docker/config.json ~/.docker/config.json
 # cp ~/dotfiles/.switch-proxy.osx ~/.switch-proxy
 mkdir -p ~/.ipython/profile_default/
 echo "c.InteractiveShell.colors = 'Linux'" > ~/.ipython/profile_default/ipython_config.py
