@@ -138,3 +138,8 @@ lsof -iUDP                                                                      
 lsof -U                                                                                                                                         # show Unix Domain Socket connection
 lsof -i@169.254.169.254 -n                                                                                                                      # show specific IP's conneciton
 tar -czh . | docker build -                                                                                                                     # Build dockerfile including symlink's substance
+git clone https://github.com/ktrysmt/dotfiles --recursive                                                                                       # git clone within submodule
+git submodule add --depth 1 https://github.com/ktrysmt/dotfiles dir                                                                             # submodule add
+git submodule update                                                                                                                            # submodule update just only
+git submodule update --init                                                                                                                     # submodule update when did git clone without --recursive
+git submodule deinit dir && git rm -rf dir                                                                                                      # submodule delete
