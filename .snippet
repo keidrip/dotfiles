@@ -143,3 +143,4 @@ git submodule add --depth 1 https://github.com/ktrysmt/dotfiles dir             
 git submodule update                                                                                                                            # submodule update just only
 git submodule update --init                                                                                                                     # submodule update when did git clone without --recursive
 git submodule deinit dir && git rm -rf dir                                                                                                      # submodule delete
+echo "127.0.0.1 local.example.com" | sudo tee -a /etc/hosts                                                                                     # pipe and sudo
