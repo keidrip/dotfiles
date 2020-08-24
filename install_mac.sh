@@ -129,4 +129,4 @@ sudo sh -c "echo $(which zsh) >> /etc/shells";
 chsh -s $(which zsh)
 
 # cica font: https://github.com/miiton/Cica/releases
-# mouse: defaults write "Apple Global Domain" com.apple.mouse.scaling 5
+# mouse: defaults write "Apple Global Domain" com.apple.mouse.scaling 11
