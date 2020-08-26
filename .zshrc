@@ -9,7 +9,6 @@
     zgen load aws/aws-cli bin/aws_zsh_completer.sh
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-completions
-    zgen load Tarrasch/zsh-autoenv
     zgen load lukechilds/zsh-better-npm-completion
     zgen load docker/cli contrib/completion/zsh/_docker
     zgen load docker/compose contrib/completion/zsh/_docker-compose
@@ -337,3 +336,4 @@
 }
 
 #export PATH="$HOME/.yarn/bin:$PATH"
+
