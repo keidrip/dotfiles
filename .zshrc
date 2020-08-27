@@ -19,7 +19,7 @@
 }
 
 : "env" && {
-  # export PROMPT='[%*]%{$fg_bold[green]%} %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
+  # zsh
   export PROMPT='[%*]%{$fg_bold[green]%} %{$fg[cyan]%}%c %{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
   export HIST_STAMPS="yyyy/mm/dd"
   export EDITOR='vim'
@@ -38,7 +38,6 @@
   [ -f ~/.cargo/env ] && source ~/.cargo/env
   # fzf
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-  # export FZF_DEFAULT_COMMAND='rg ""'
   export FZF_DEFAULT_OPTS="--reverse --height ${FZF_TMUX_HEIGHT:-80%} --select-1 --exit-0"
   export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
   export FZF_CTRL_T_OPTS='--select-1 --exit-0 --preview "bat --color=always --style=header,grid --line-range :100 {}"'
@@ -236,22 +235,15 @@
 }
 
 : "dstat" && {
-  alias dstat-full="dstat -Tclmdrn" # full
-  alias dstat-memory="dstat -Tclm"    # memory
-  alias dstat-cpu="dstat -Tclr"    # cpu
-  alias dstat-network="dstat -Tclnd"   # network
-  alias dstat-diskio="dstat -Tcldr"   # diskI/O
+  alias dstat-full="dstat -Tclmdrn"  # full
+  alias dstat-memory="dstat -Tclm"   # memory
+  alias dstat-cpu="dstat -Tclr"      # cpu
+  alias dstat-network="dstat -Tclnd" # network
+  alias dstat-diskio="dstat -Tcldr"  # diskI/O
 }
 
 : "peco history" && {
   function peco-select-history() {
-      # historyを番号なし、逆順、最初から表示。
-      # 順番を保持して重複を削除。
-      # カーソルの左側の文字列をクエリにしてpecoを起動
-      # \nを改行に変換
-      #BUFFER="$(\history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
-      #CURSOR=$#BUFFER # カーソルを文末に移動
-      #zle -R -c       # refresh
       emulate -L zsh
       local delimiter=$'\0; \0' newline=$'\n'
       BUFFER=${"$(print -rl ${history//$newline/$delimiter} | peco --query "$LBUFFER")"//$delimiter/$newline}
@@ -262,8 +254,6 @@
   zle     -N   peco-select-history
   bindkey '^r' peco-select-history
 }
-
-# <not use>
 : "fzf history" && {
   # function fzf-history-widget() {
   #   local selected num
@@ -296,30 +286,21 @@
 : "Switch ENV by OSTYPE" && {
   if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Linux
-    #
     if [[ "$USERNAME" == "vagrant" ]]; then
-      # Ubuntu1404 in Vagrant
-      source ~/dotfiles/.zshrc.ubuntu1404.vagrant;
+      # Ubuntu on Vagrant
     fi
   elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # Mac OSX
-    #
     export HOMEBREW_CASK_OPTS="--appdir=/Applications";
   elif [[ "$OSTYPE" == "cygwin" ]]; then
-    # POSIX compatibility layer and Linux environment emulation for Windows
     #
   elif [[ "$OSTYPE" == "msys" ]]; then
-    # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
     #
   elif [[ "$OSTYPE" == "win32" ]]; then
-    # I'm not sure this can happen.
     #
   elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    # ...
     #
   else
     # Unknown.
-    #
   fi
 }
 
@@ -335,5 +316,4 @@
   fi
 }
 
-#export PATH="$HOME/.yarn/bin:$PATH"
 
