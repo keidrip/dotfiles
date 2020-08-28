@@ -40,7 +40,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf' " installed fzf via brew
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim' " fzf.vim require fzf >= v0.22
 Plug 'thinca/vim-quickrun'
 Plug 'terryma/vim-expand-region'
 Plug 'RRethy/vim-illuminate'
