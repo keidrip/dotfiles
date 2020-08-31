@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -o pipefail
 set -e
 
@@ -16,29 +17,10 @@ brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags --with-libyaml
 exec $SHELL -l
 
-# anyenv
-git clone https://github.com/riywo/anyenv ~/.anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-exec $SHELL -l
-anyenv install --init
-eval "$(anyenv init -)"
-exec $SHELL -l
-
-# nodenv
-mkdir -p $(anyenv root)/plugins
-git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-anyenv install nodenv
-eval "$(anyenv init -)"
-exec $SHELL -l
-nodenv install 12.8.0
-nodenv rehash
-nodenv global 12.8.0
-exec $SHELL -l
-
 # rust
+# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
-# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
 
 # symlink
 cd ~/

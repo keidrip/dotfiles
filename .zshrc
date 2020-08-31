@@ -30,10 +30,6 @@
   export PATH=$HOME/go/bin:$PATH
   export PATH=$HOME/project/bin:$PATH
   export GOPATH=$HOME/go:$HOME/project
-  # anyenv and node
-  export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
-  export PATH=$PATH:./node_modules/.bin
   # rust
   [ -f ~/.cargo/env ] && source ~/.cargo/env
   # fzf
@@ -54,6 +50,16 @@
   export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
   export PATH=$HOME/.rbenv/shims:$PATH
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+}
+
+: "xxxenv" && {
+
+  # anyenv() {
+  #   unfunction "$0"
+  #   source <(anyenv init -)
+  #   $0 "$@"
+  # }
+
 }
 
 : "alias" && {
