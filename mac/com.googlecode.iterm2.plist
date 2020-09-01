@@ -14,6 +14,8 @@
 	<string>manual</string>
 	<key>BootstrapDaemon</key>
 	<true/>
+	<key>Command</key>
+	<string>/usr/local/bin/zsh</string>
 	<key>Control</key>
 	<integer>7</integer>
 	<key>Default Bookmark Guid</key>
@@ -205,6 +207,8 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1672 2440 445 77 -634 1050 3840 2160 </string>
+	<key>NSWindow Frame ProfilesPanel</key>
+	<string>87 1830 735 382 -444 1050 2560 1417 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>553 1982 616 174 -419 1050 2560 1417 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
@@ -218,7 +222,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>0 450 592 577 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1027 0 0 1680 1027 </string>
+	<string>2 0 1676 1026 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-76 1231 570 377 -419 1050 2560 1440 </string>
 	<key>New Bookmarks</key>
@@ -422,7 +426,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string></string>
+			<string>/usr/local/bin/zsh</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1525,6 +1529,7 @@
 		<string>3.3.6</string>
 		<string>3.3.8</string>
 		<string>3.3.11</string>
+		<string>3.3.12</string>
 		<string>3.3.1</string>
 		<string>3.3.7</string>
 		<string>3.3.9</string>
@@ -1564,7 +1569,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>540029823.01515698</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>37</integer>
+	<integer>38</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -2362,7 +2367,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-08-28T09:33:06Z</date>
+	<date>2020-08-31T10:47:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -2384,7 +2389,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.3.11</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
