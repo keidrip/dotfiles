@@ -144,3 +144,4 @@ git submodule update                                                            
 git submodule update --init                                                                                                                     # submodule update when did git clone without --recursive
 git submodule deinit dir && git rm -rf dir                                                                                                      # submodule delete
 echo "127.0.0.1 local.example.com" | sudo tee -a /etc/hosts                                                                                     # pipe and sudo
+read -s pass ; perl -i -pe "s/TARGET_STRING/$pass/" /path/to/file                                                                               # Safely replace strings
