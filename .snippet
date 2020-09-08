@@ -145,3 +145,4 @@ git submodule update --init                                                     
 git submodule deinit dir && git rm -rf dir                                                                                                      # submodule delete
 echo "127.0.0.1 local.example.com" | sudo tee -a /etc/hosts                                                                                     # pipe and sudo
 read -s pass ; perl -i -pe "s/TARGET_STRING/$pass/" /path/to/file                                                                               # Safely replace strings
+export AWS_ACCESS_KEY_ID=XXXX; export AWS_SECRET_ACCESS_KEY=YYYY; export AWS_DEFAULT_REGION=ap-northeast-1; export AWS_SESSION_TOKEN=ZZZZ;      # use aws envs here
