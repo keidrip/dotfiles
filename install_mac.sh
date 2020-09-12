@@ -37,8 +37,7 @@ ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tigrc ~/.tigrc
-# ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
-ln -s ~/dotfiles/.tmux.conf.osx.v2.9 ~/.tmux.conf
+ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
 ln -s ~/dotfiles/.tern-project ~/.tern-project
 ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 ln -s ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
