@@ -31,7 +31,7 @@
   export PATH=$HOME/project/bin:$PATH
   export GOPATH=$HOME/go:$HOME/project
   # c/c++
-  export PATH=$PATH:/usr/local/opt/llvm/bin
+  export PATH="/usr/local/opt/llvm/bin:$PATH"
   # rust
   [ -f ~/.cargo/env ] && source ~/.cargo/env
   # fzf
