@@ -58,6 +58,7 @@ if executable('pyls') && &ft=='python'
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
         \ })
+    autocmd FileType python setlocal omnifunc=lsp#complete
   augroup END
 endif
 
@@ -69,6 +70,7 @@ if executable('clangd') && ( &ft=='c' || &ft=='cpp' )
         \ 'cmd': {server_info->['clangd']},
         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
         \ })
+    autocmd FileType c,cpp setlocal omnifunc=lsp#complete
   augroup END
 endif
 
@@ -80,6 +82,7 @@ if executable('solargraph') && &ft=='ruby'
         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
         \ 'whitelist': ['ruby'],
         \ })
+    autocmd FileType ruby setlocal omnifunc=lsp#complete
   augroup END
 endif
 
