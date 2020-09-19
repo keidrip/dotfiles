@@ -6,7 +6,7 @@ let g:lsp_hover_conceal = 1 " not use LspHover
 let g:lsp_preview_float = 0
 let g:lsp_documentation_float = 0
 
-if executable('rust-analyzer') && &ft=='rust'
+if executable('rust-analyzer')
   augroup LspRustAnalyzer
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
@@ -18,7 +18,7 @@ if executable('rust-analyzer') && &ft=='rust'
   augroup END
 endif
 
-if executable('gopls') && &ft=='go'
+if executable('gopls')
   augroup LspGo
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
@@ -40,7 +40,7 @@ if executable('gopls') && &ft=='go'
   augroup END
 endif
 
-if executable('pyls') && &ft=='python'
+if executable('pyls')
   augroup LspPython
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
@@ -52,19 +52,19 @@ if executable('pyls') && &ft=='python'
   augroup END
 endif
 
-if executable('clangd') && &ft=='c'
+if executable('clangd')
   augroup LspClangd
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
         \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ 'cmd': {server_info->['clangd', '--background-index']},
+        \ 'whitelist': ['c', 'cpp'],
         \ })
     autocmd FileType c,cpp setlocal omnifunc=lsp#complete
   augroup END
 endif
 
-if executable('solargraph') && &ft=='ruby'
+if executable('solargraph')
   augroup LspRuby
     autocmd!
     autocmd User lsp_setup call lsp#register_server({
