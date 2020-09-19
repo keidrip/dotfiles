@@ -11,7 +11,6 @@ brew install \
   go peco wget tmux zsh nkf tree ripgrep fd procs fzf tig fzy exa \
   python jq git-secrets bat watch ghq git diff-so-fancy kind \
   kubectl kubectx kubernetes-helm coreutils llvm
-brew install tldr-pages/tldr/tldr
 brew install neovim/neovim/neovim
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags --with-libyaml
