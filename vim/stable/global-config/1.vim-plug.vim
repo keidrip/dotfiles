@@ -66,6 +66,9 @@ Plug 'hashivim/vim-terraform', { 'for': ['tf', 'terraform'] }
 " [dockerfile]
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['tf', 'Dockerfile'] }
 
+" [c/cpp]
+Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
+
 call plug#end()
 
 

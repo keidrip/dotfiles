@@ -12,6 +12,8 @@ let g:ale_linters = {
   \ 'yaml' : [''],
 	\ 'go'   : ['golangci-lint'],
   \ 'rust' : ['rls'],
+  \ 'c' : ['clangd'],
+  \ 'cpp' : ['clangd'],
 \}
 
 let g:ale_go_golangci_lint_options = '--fast --enable-all -D errcheck'
