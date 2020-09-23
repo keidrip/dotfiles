@@ -3,6 +3,7 @@ let g:lsp_diagnostics_enabled = 0 " use ale to cieck errors
 " let g:lsp_signs_enabled = 1         " enable signs
 " let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 let g:lsp_hover_conceal = 1 " not use LspHover
+let lsp_signature_help_enabled = 0
 let g:lsp_preview_float = 0
 let g:lsp_documentation_float = 0
 
