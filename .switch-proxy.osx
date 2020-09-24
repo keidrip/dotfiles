@@ -1,4 +1,4 @@
-proxy=proxy.example.com:4444
+proxy=http://proxy.example.com:4444/
 switch_trigger=workspace
 
 function set_proxy() {
