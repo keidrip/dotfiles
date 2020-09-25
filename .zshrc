@@ -15,7 +15,6 @@
 
     zgen save
   fi
-  #autoload -Uz compinit && compinit -i
 }
 
 : "env" && {
@@ -25,26 +24,33 @@
   export EDITOR='vim'
   export HISTSIZE=5000000
   export MANPAGER="col -b -x|vim -"
+
   # go
   export PATH=$PATH:/usr/local/go/bin
   export PATH=$HOME/go/bin:$PATH
   export PATH=$HOME/project/bin:$PATH
   export GOPATH=$HOME/go:$HOME/project
+
   # c/c++
   export PATH="/usr/local/opt/llvm/bin:$PATH"
+
   # rust
   [ -f ~/.cargo/env ] && source ~/.cargo/env
+
   # fzf
   export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
   export FZF_DEFAULT_OPTS="--reverse --height ${FZF_TMUX_HEIGHT:-80%} --select-1 --exit-0"
   export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
   export FZF_CTRL_T_OPTS='--select-1 --exit-0 --preview "bat --color=always --style=header,grid --line-range :100 {}"'
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
   # awscli
   [ -f /usr/local/bin/aws_zsh_completer.sh ] && source /usr/local/bin/aws_zsh_completer.sh
+
   # k8s/docker
   export DOCKER_BUILDKIT=1
   export KREW_NO_UPGRADE_CHECK=1
+
   # other path
   export PATH="$HOME/.cargo/bin:$PATH"
   export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
@@ -52,16 +58,6 @@
   export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
   export PATH=$HOME/.rbenv/shims:$PATH
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-}
-
-: "xxxenv" && {
-
-  # anyenv() {
-  #   unfunction "$0"
-  #   source <(anyenv init -)
-  #   $0 "$@"
-  # }
-
 }
 
 : "alias" && {
@@ -232,7 +228,7 @@
   alias c="powered_cd"
 }
 
-: "peco snippet" && {
+: "peco-snippet" && {
   function peco-select-snippet() {
     BUFFER=$(cat ~/.snippet | peco)
     CURSOR=$#BUFFER
@@ -250,7 +246,7 @@
   alias dstat-diskio="dstat -Tcldr"  # diskI/O
 }
 
-: "peco history" && {
+: "peco-history" && {
   function peco-select-history() {
       emulate -L zsh
       local delimiter=$'\0; \0' newline=$'\n'
@@ -262,7 +258,8 @@
   zle     -N   peco-select-history
   bindkey '^r' peco-select-history
 }
-: "fzf history" && {
+
+: "fzf-history" && {
   # function fzf-history-widget() {
   #   local selected num
   #   setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null

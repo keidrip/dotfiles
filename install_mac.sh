@@ -3,8 +3,6 @@
 set -o pipefail
 set -e
 
-# type it before running `sudo :`
-
 # brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install \
@@ -51,9 +49,6 @@ git secrets --register-aws --global
 git secrets --install ~/.git-templates/git-secrets
 git config --global init.templatedir '~/.git-templates/git-secrets'
 git config --global credential.helper osxkeychain
-git config --global user.name "ktrysmt"
-git config --global user.email "kotaro.yoshimatsu@gmail.com"
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
 # go
 mkdir -p ~/project/bin
@@ -69,7 +64,7 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 pip3 install neovim
 ln -sf $(which nvim) /usr/local/bin/vim
 pip3 install 'python-language-server[yapf]'
-pip3 install ipdb
+pip3 install ipdb # python debugger
 
 # k8s
 (
@@ -84,11 +79,9 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 kubectl krew install tree open-svc
 
 # sub tools
-go get github.com/golangci/golangci-lint/cmd/golangci-lint
-go get golang.org/x/tools/gopls
 go get github.com/go-delve/delve/cmd/dlv
 vim +":PlugInstall" +":setfiletype go" +":GoInstallBinaries" +qa
-# npm i -g yaml-language-server
+vim +":LspInstallServer gopls" +":LspInstallServer golangci-lint-langserver" +":LspInstallServer rust-analyzer" +qa
 npm i -g npm-check-updates neovim
 
 # brew cask

@@ -1,16 +1,20 @@
 [ghq]
-  root = ~/project/src
   root = ~/go/src
+  root = ~/project/src
 [http "https://gopkg.in"]
   followRedirects = true
 [alias]
   refs = !git checkout $(git branch | peco | awk '{ print $NF }')
 [diff]
   indentHeuristic = true
+[user]
+	email = kotaro.yoshimatsu@gmail.com
+	name = ktrysmt
 [merge]
-  ff = false
+	ff = false
 [pull]
-  ff = only
+	ff = only
 [url "https://"]
-  insteadOf = git://
-
+	insteadOf = git://
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
