@@ -32,7 +32,7 @@
   export GOPATH=$HOME/go:$HOME/project
 
   # c/c++
-  export PATH="/usr/local/opt/llvm/bin:$PATH"
+  export PATH="/usr/local/opt/llvm/bin:$PATH" # clangd, clangd-format
 
   # rust
   [ -f ~/.cargo/env ] && source ~/.cargo/env
