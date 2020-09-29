@@ -6,12 +6,36 @@ set -e
 # brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install \
-  go peco wget tmux zsh nkf tree ripgrep fd procs fzf tig fzy exa \
-  python jq git-secrets bat watch ghq git diff-so-fancy kind \
-  kubectl kubectx kubernetes-helm coreutils llvm
+  go \
+  peco \
+  wget \
+  tmux \
+  zsh \
+  nkf \
+  tree \
+  ripgrep \
+  fd \
+  procs \
+  fzf \
+  tig \
+  fzy \
+  exa \
+  python \
+  jq \
+  git-secrets \
+  bat \
+  watch \
+  ghq \
+  git \
+  diff-so-fancy \
+  kind \
+  kubectl \
+  kubectx \
+  kubernetes-helm \
+  coreutils \
+  llvm
 brew install neovim/neovim/neovim
-brew tap universal-ctags/universal-ctags
-brew install --HEAD universal-ctags --with-libyaml
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags --with-libyaml
 exec $SHELL -l
 
 # rust
@@ -35,7 +59,6 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tigrc ~/.tigrc
 ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
-ln -s ~/dotfiles/.tern-project ~/.tern-project
 ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 ln -s ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 cp ~/dotfiles/.gitconfig ~/.gitconfig
