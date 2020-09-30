@@ -1,1 +1,2 @@
-let g:Illuminate_ftblacklist = ['nerdtree']
+let g:Illuminate_ftblacklist = ['fern']
+

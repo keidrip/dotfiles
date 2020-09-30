@@ -12,14 +12,14 @@ nnoremap <silent> <ESC><ESC> :nohlsearch<CR><ESC>
 nnoremap <C-g> :echo expand('%:p')<Return>
 nnoremap <Leader>co :copen<cr>
 nnoremap <Leader>cl :cclose<cr>
-nnoremap <expr> <Leader>a (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Ag\<cr>"
-nnoremap <expr> <Leader>x (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Commands\<cr>"
-nnoremap <expr> <Leader>f (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
-nnoremap <expr> <Leader>d (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":GFiles?\<cr>"
-nnoremap <expr> <Leader>b (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Buffers\<cr>"
-nnoremap <expr> <Leader>h (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":History:\<cr>"
-nnoremap <expr> <Leader>r (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Ripgrep\<cr>"
-nnoremap <expr> <Leader>w (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Windows\<cr>"
+nnoremap <expr> <Leader>a (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Ag\<cr>"
+nnoremap <expr> <Leader>x (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Commands\<cr>"
+nnoremap <expr> <Leader>f (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <expr> <Leader>d (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":GFiles?\<cr>"
+nnoremap <expr> <Leader>b (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Buffers\<cr>"
+nnoremap <expr> <Leader>h (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":History:\<cr>"
+nnoremap <expr> <Leader>r (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Ripgrep\<cr>"
+nnoremap <expr> <Leader>w (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Windows\<cr>"
 nnoremap <Leader>gm :Gmerge<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Glog<CR>

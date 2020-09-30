@@ -15,9 +15,13 @@ Plug 'KKPMW/moonshine-vim'
 
 "" [general]
 Plug 'cohama/lexima.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Plug 'scrooloose/nerdtree'
+" Plug 'jistr/vim-nerdtree-tabs'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'lambdalisue/fern.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'
+
 Plug 'Shougo/unite.vim'
 Plug 'LeafCage/yankround.vim'
 Plug 'osyo-manga/vim-anzu'
