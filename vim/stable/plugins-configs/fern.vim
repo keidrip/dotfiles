@@ -1,15 +1,18 @@
  function! s:init_fern() abort
-  nmap <buffer> l <Plug>(fern-action-open:edit)
 
   nmap <buffer><expr>
       \ <Plug>(fern-my-expand-or-collapse)
       \ fern#smart#leaf(
       \   "\<Plug>(fern-action-collapse)",
-      \   "\<Plug>(fern-action-expand)",
+      \   "\<Plug>(fern-action-expand:stay)",
       \   "\<Plug>(fern-action-collapse)",
-      \ )
+      \ ) " 循環するので使うのはexpand:stay固定で
 
-  nmap <buffer><nowait> o <Plug>(fern-my-expand-or-collapse)
+  nmap <buffer>
+        \ <Plug>(fern-action-expand)
+        \ <Plug>(fern-my-expand-or-collapse) " overwrite <expand>
+
+  nmap <buffer> o <Plug>(fern-action-open-or-expand)
 
   nmap <buffer> go <Plug>(fern-action-open:edit)<C-w>p
   nmap <buffer> t <Plug>(fern-action-open:tabedit)
@@ -28,6 +31,8 @@
   nmap <buffer> Y <Plug>(fern-action-yank:path)
 
   nmap <buffer> P gg
+
+  nmap <buffer> l <Nop>
   nmap <buffer> e <Nop>
   nmap <buffer> E <Nop>
 
