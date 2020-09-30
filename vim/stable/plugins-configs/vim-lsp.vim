@@ -11,3 +11,9 @@ let g:lsp_documentation_float = 0
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_signs_enabled = 0
 let g:lsp_diagnostics_echo_cursor = 0
+
+augroup VimLspSetting
+  autocmd!
+  autocmd FileType go,rust,python,ruby,c,cpp nmap gd <plug>(lsp-definition)
+  autocmd FileType go,rust,python,ruby,c,cpp autocmd BufWritePre <buffer> LspDocumentFormatSync
+augroup END

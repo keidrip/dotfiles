@@ -1,6 +1,4 @@
  function! s:init_fern() abort
-  " Define NERDTree like mappings
-
   nmap <buffer> l <Plug>(fern-action-open:edit)
 
   nmap <buffer><expr>

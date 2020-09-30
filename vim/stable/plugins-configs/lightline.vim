@@ -1,6 +1,3 @@
-"" auzu
-set statusline+=%{anzu#search_status()}
-"" lightline
 set laststatus=2
 set t_Co=256
 if !has('gui_running')

@@ -13,10 +13,12 @@ call plug#begin()
 " [colorscheme]
 Plug 'KKPMW/moonshine-vim'
 
-"" [general]
-Plug 'cohama/lexima.vim'
+" [filer]
 Plug 'lambdalisue/fern.vim'
-Plug 'antoinemadec/FixCursorHold.nvim' " https://github.com/lambdalisue/fern.vim#installation
+Plug 'antoinemadec/FixCursorHold.nvim'
+
+" [general]
+Plug 'cohama/lexima.vim'
 Plug 'Shougo/unite.vim'
 Plug 'LeafCage/yankround.vim'
 Plug 'osyo-manga/vim-anzu'
@@ -38,13 +40,15 @@ Plug 'thinca/vim-qfreplace'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
-Plug '/usr/local/opt/fzf' " installed fzf via brew
-Plug 'junegunn/fzf.vim' " fzf.vim require fzf >= v0.22
 Plug 'thinca/vim-quickrun'
 Plug 'terryma/vim-expand-region'
 Plug 'RRethy/vim-illuminate'
 Plug 'chase/vim-ansible-yaml'
 Plug 'ncm2/float-preview.nvim'
+
+" [fzf]
+Plug '/usr/local/opt/fzf' " installed fzf via brew
+Plug 'junegunn/fzf.vim' " fzf.vim require fzf >= v0.22
 
 " [lsp]
 Plug 'prabirshrestha/vim-lsp'

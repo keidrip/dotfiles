@@ -1,4 +1,3 @@
-
 set diffexpr=unified_diff#diffexpr()
 let unified_diff#executable = 'git'
 let unified_diff#arguments = [

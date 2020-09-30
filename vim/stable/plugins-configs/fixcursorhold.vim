@@ -1,1 +1,1 @@
-let g:cursorhold_updatetime = 100
+let g:cursorhold_updatetime = 200

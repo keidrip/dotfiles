@@ -23,3 +23,18 @@ function! s:my_tabline()  "{{{
 endfunction "}}}
 
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
+
+" The prefix key.
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+
+" Tab map
+nmap [Tag]c :tablast <bar> tabnew<CR>
+nmap [Tag]x :tabclose<CR>
+nmap [Tag]n :tabnext<CR>
+nmap [Tag]p :tabprevious<CR>
