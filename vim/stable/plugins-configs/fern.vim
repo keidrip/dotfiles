@@ -1,6 +1,18 @@
  function! s:init_fern() abort
   " Define NERDTree like mappings
-  nmap <buffer> o <Plug>(fern-action-open:edit)
+
+  nmap <buffer> l <Plug>(fern-action-open:edit)
+
+  nmap <buffer><expr>
+      \ <Plug>(fern-my-expand-or-collapse)
+      \ fern#smart#leaf(
+      \   "\<Plug>(fern-action-collapse)",
+      \   "\<Plug>(fern-action-expand)",
+      \   "\<Plug>(fern-action-collapse)",
+      \ )
+
+  nmap <buffer><nowait> o <Plug>(fern-my-expand-or-collapse)
+
   nmap <buffer> go <Plug>(fern-action-open:edit)<C-w>p
   nmap <buffer> t <Plug>(fern-action-open:tabedit)
   nmap <buffer> T <Plug>(fern-action-open:tabedit)gT
@@ -18,7 +30,6 @@
   nmap <buffer> Y <Plug>(fern-action-yank:path)
 
   nmap <buffer> P gg
-  nmap <buffer> l <Nop>
   nmap <buffer> e <Nop>
   nmap <buffer> E <Nop>
 
