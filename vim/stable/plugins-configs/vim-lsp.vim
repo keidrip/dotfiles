@@ -3,7 +3,7 @@ let g:lsp_async_completion = 1
 let g:lsp_hover_conceal = 0
 let g:lsp_signature_help_enabled = 0
 
-" float
+" floating window with lsp
 let g:lsp_preview_float = 0
 let g:lsp_documentation_float = 0
 
