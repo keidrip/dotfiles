@@ -4,10 +4,10 @@
 
 ```
 # Ubuntu
-curl -fsSL https://raw.github.com/ktrysmt/dotfiles/master/install_ubuntu_minimum.sh | sh
+sudo /bin/bash -c "$(curl -fsSL https://raw.github.com/ktrysmt/dotfiles/master/install_ubuntu_minimum.sh)"
 
 # macOS
-curl -fsSL https://raw.github.com/ktrysmt/dotfiles/master/install_macos.sh | sh
+sudo /bin/bash -c "$(curl -fsSL https://raw.github.com/ktrysmt/dotfiles/master/install_macos.sh)"
 ```
 
 ## Author

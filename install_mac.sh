@@ -35,8 +35,8 @@ brew install \
   kubectx \
   kubernetes-helm \
   coreutils \
-  llvm
-brew install neovim/neovim/neovim
+  llvm \
+  neovim
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags --with-libyaml
 exec $SHELL -l
 

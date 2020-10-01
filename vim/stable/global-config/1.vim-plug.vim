@@ -1,10 +1,10 @@
 "" Settings
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   augroup VimPlugSetting
     autocmd!
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   augroup END
 endif
 
@@ -74,10 +74,4 @@ Plug 'ekalinin/Dockerfile.vim', { 'for': ['tf', 'Dockerfile'] }
 Plug 'rhysd/vim-clang-format', { 'for': ['c', 'cpp'] }
 
 call plug#end()
-
-
-
-
-
-
 

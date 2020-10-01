@@ -290,10 +290,13 @@
 
 : "Switch ENV by OSTYPE" && {
   if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    # Linux
+    export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
     if [[ "$USERNAME" == "vagrant" ]]; then
       # Ubuntu on Vagrant
     fi
+
   elif [[ "$OSTYPE" == "darwin"* ]]; then
     export HOMEBREW_CASK_OPTS="--appdir=/Applications";
     # curl

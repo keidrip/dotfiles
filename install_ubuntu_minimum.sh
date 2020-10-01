@@ -3,10 +3,13 @@
 set -o pipefail
 set -vxeu
 
+read -p "password? > " PASSWORD
+
 # linuxbrew
 sudo apt-get -qq -y update
-sudo apt-get -qq -y install build-essential curl file git
+sudo apt-get -qq -y install build-essential curl file git zsh nodejs
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # brew
@@ -15,7 +18,6 @@ brew install \
   peco \
   wget \
   tmux \
-  zsh \
   nkf \
   tree \
   ripgrep \
@@ -38,15 +40,19 @@ brew install \
   kubectx \
   kubernetes-helm \
   coreutils \
-  llvm
-brew install neovim/neovim/neovim
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags --with-libyaml
+  llvm \
+  neovim
+# brew install --HEAD universal-ctags/universal-ctags/universal-ctags # install failed
 exec $SHELL -l
 
 # rust
 # setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
+
+# node
+sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+sudo apt-get -qq -y install nodejs
 
 # symlink
 cd ~/
@@ -82,21 +88,21 @@ export PATH=$HOME/go/bin:$HOME/project/bin:$PATH
 export GOPATH=$HOME/go:$HOME/project
 
 # nvim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir -p ~/.config/nvim/
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 pip3 install neovim
-ln -sf $(which nvim) /usr/local/bin/vim
+sudo ln -sf $(which nvim) $(which vim)
 pip3 install 'python-language-server[yapf]'
 pip3 install ipdb # python debugger
 
 # sub tools
 go get github.com/go-delve/delve/cmd/dlv
 vim +":PlugInstall" +":setfiletype go" +":GoInstallBinaries" +qa
-vim +":LspInstallServer gopls" +":LspInstallServer golangci-lint-langserver" +":LspInstallServer rust-analyzer" +qa
-npm i -g npm-check-updates neovim
+vim +"set ft=go" +":LspInstallServer gopls" +qa
+vim +"set ft=go" +":LspInstallServer golangci-lint-langserver" +qa
+vim +"set ft=rust" +":LspInstallServer rust-analyzer" +qa
+sudo npm i -g npm-check-updates neovim
 
 # the final task
 sudo sh -c "echo $(which zsh) >> /etc/shells";
-chsh -s $(which zsh)
+echo $PASSWORD | chsh -s $(which zsh)
