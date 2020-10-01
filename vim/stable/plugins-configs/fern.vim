@@ -36,8 +36,18 @@
   nmap <buffer> e <Nop>
   nmap <buffer> E <Nop>
 
-  nmap <buffer> C <Plug>(fern-action-enter)
-  nmap <buffer> u <Plug>(fern-action-leave)
+	nmap <buffer> <Plug>(fern-my-enter-and-tcd)
+	      \ <Plug>(fern-action-enter)
+	      \ <Plug>(fern-wait)
+	      \ <Plug>(fern-action-tcd:root)
+  nmap <buffer> C <Plug>(fern-my-enter-and-tcd)
+
+	nmap <buffer> <Plug>(fern-my-leave-and-tcd)
+	      \ <Plug>(fern-action-leave)
+	      \ <Plug>(fern-wait)
+	      \ <Plug>(fern-action-tcd:root)
+  nmap <buffer> u <Plug>(fern-my-leave-and-tcd)
+
   nmap <buffer> r <Plug>(fern-action-reload)
   nmap <buffer> R gg<Plug>(fern-action-reload)<C-o>
   nmap <buffer> cd <Plug>(fern-action-cd)
@@ -58,3 +68,5 @@ map <silent> <C-E> :Fern . -keep -drawer -stay -toggle -width=50<CR>
 nnoremap <silent> <C-W>f :Fern . -reveal=% -keep -drawer -stay -width=50<CR>:wincmd p<CR>
 
 let g:fern#opener = "vsplit"
+let g:fern#default_hidden = 1
+
