@@ -150,3 +150,5 @@ curl -fsSL URL                                                                  
 openssl s_client -cipher ALL -servername github.com -connect github.com:443                                                                     # verify cipher
 awk '{$1="";print $0}' file.txt                                                                                                                 # 最初のフィールドを除外
 awk '{$NF="";print $0}' file.txt                                                                                                                # 最後のフィールドを除外
+sudo :; curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o awscliv2.pkg && sudo installer -pkg ./awscliv2.pkg -target / && rm awscliv2.pkg     # one-liner to upgrade awscliv2 on macos
+
