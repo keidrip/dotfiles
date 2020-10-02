@@ -68,7 +68,7 @@ ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tigrc ~/.tigrc
-ln -s ~/dotfiles/.tmux.conf.osx ~/.tmux.conf
+ln -s ~/dotfiles/.tmux.conf.ubuntu ~/.tmux.conf
 ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 cp ~/dotfiles/.docker/config.json ~/.docker/config.json
