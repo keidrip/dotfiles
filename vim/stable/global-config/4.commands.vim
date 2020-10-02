@@ -8,6 +8,5 @@ command! -bang -nargs=* Ripgrep
   \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'right:50%'), <bang>0)
 
 command! Rv source $MYVIMRC
-command! Ev tabnew | edit $MYVIMRC
-command! Edv edit $HOME/dotfiles/.vimrc
+command! Ev edit $HOME/dotfiles/.vimrc
 cabbr w!! w !sudo tee > /dev/null %
