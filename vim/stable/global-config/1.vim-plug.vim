@@ -47,8 +47,8 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'ncm2/float-preview.nvim'
 
 " [fzf]
-Plug '/usr/local/opt/fzf' " installed fzf via brew
-Plug 'junegunn/fzf.vim' " fzf.vim require fzf >= v0.22
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " [lsp]
 Plug 'prabirshrestha/vim-lsp'

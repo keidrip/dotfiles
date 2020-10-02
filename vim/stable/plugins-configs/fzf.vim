@@ -6,3 +6,5 @@ nnoremap <expr> <Leader>b (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Buffer
 nnoremap <expr> <Leader>h (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":History:\<cr>"
 nnoremap <expr> <Leader>r (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Ripgrep\<cr>"
 nnoremap <expr> <Leader>w (expand('%') =~ 'fern' ? "\<c-w>\<c-w>" : '').":Windows\<cr>"
+
+let g:fzf_layout = { 'down': '~40%' }
