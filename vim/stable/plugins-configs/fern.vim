@@ -64,8 +64,8 @@ augroup FernSetting
   autocmd VimEnter * ++nested Fern . -keep -drawer -stay -toggle -width=50
 augroup END
 
-map <silent> <C-E> :Fern . -keep -drawer -stay -toggle -width=50<CR>
-nnoremap <silent> <C-W>f :Fern . -reveal=% -keep -drawer -stay -width=50<CR>:wincmd p<CR>
+map <silent> <C-E> :cd `git rev-parse --show-toplevel`<CR> :Fern . -keep -drawer -stay -toggle -width=50<CR>
+nnoremap <silent> <C-W>f :cd %:h \| cd `git rev-parse --show-toplevel` \| :Fern . -reveal=% -keep -drawer -stay -width=50<CR>:wincmd p<CR>
 
 let g:fern#opener = "vsplit"
 let g:fern#default_hidden = 1
