@@ -15,6 +15,7 @@ Plug 'KKPMW/moonshine-vim'
 
 " [filer]
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 
 " [general]
