@@ -1,5 +1,4 @@
  function! s:init_fern() abort
-
   nmap <buffer><expr>
       \ <Plug>(fern-my-expand-or-collapse)
       \ fern#smart#leaf(
@@ -58,14 +57,25 @@
   nmap <buffer> q :<C-u>quit<CR>
 endfunction
 
+function! s:toggle_fern() abort
+  :cd `git rev-parse --show-toplevel`
+  :Fern . -keep -drawer -stay -toggle -width=50
+endfunction
+
+function! s:focus_fern() abort
+  :cd %:h | cd `git rev-parse --show-toplevel` | :Fern . -reveal=% -keep -drawer -stay -width=50
+  :wincmd p
+endfunction
+
+map <silent> <C-E> :<C-u>call <SID>toggle_fern()<CR>
+nnoremap <silent> <C-W>f :<C-u>call <SID>focus_fern()<CR>
+
 augroup FernSetting
   autocmd!
   autocmd FileType fern call s:init_fern()
   autocmd VimEnter * ++nested Fern . -keep -drawer -stay -toggle -width=50
+  " autocmd BufWinEnter * if "" == expand('%') && &buftype !~ 'nofile' | echo "hoge" | endif
 augroup END
-
-map <silent> <C-E> :cd `git rev-parse --show-toplevel`<CR> :Fern . -keep -drawer -stay -toggle -width=50<CR>
-nnoremap <silent> <C-W>f :cd %:h \| cd `git rev-parse --show-toplevel` \| :Fern . -reveal=% -keep -drawer -stay -width=50<CR>:wincmd p<CR>
 
 let g:fern#opener = "vsplit"
 let g:fern#default_hidden = 1
