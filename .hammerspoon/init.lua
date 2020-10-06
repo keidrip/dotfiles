@@ -86,7 +86,7 @@ remapKey({'cmd', 'shift'}, 'l', keyCode('right', {'shift'}))
 ]]
 local function handleGlobalEvent(name, event, app)
     if event == hs.application.watcher.activated then
-        local bundleId = string.lower(app.frontmostApplication():bundleID())
+        local bundleId = string.lower(app:bundleID())
         -- hs.alert.show(bundleId)
         if (bundleId:match("iterm2")) then
             disableAllHotkeys()
@@ -99,6 +99,7 @@ local function handleGlobalEvent(name, event, app)
             enableAllHotkeys()
             -- hs.execute("'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Default profile'")
         else
+        -- hs.alert.show(bundleId)
             enableAllHotkeys()
             -- hs.execute("'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Default profile'")
         end
