@@ -43,7 +43,7 @@ function unset_proxy() {
 }
 
 if [ "`networksetup -getcurrentlocation`" = "$switch_trigger" ]; then
-  echo "Switch to proxy for university network"
+  echo "Switch to proxy for office network"
   set_proxy
 else
   unset_proxy

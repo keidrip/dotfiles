@@ -78,6 +78,7 @@
   alias grebase='git rebase -i $(git log --date=short --pretty="format:%C(yellow)%h %C(green)%cd %C(blue)%ae %C(red)%d %C(reset)%s" |fzy| cut -d" " -f1)'
   alias gbc="~/dotfiles/bin/git-checkout-remote-branch"
   alias l="exa -lha"
+  alias ll=l
   alias lt="exa -lhTa --ignore-glob '.git|node_modules'"
   alias ltt="exa -Ta --ignore-glob '.git|node_modules'"
   alias nswitch="source ~/.switch-proxy"
