@@ -45,18 +45,10 @@ brew install \
 # brew install --HEAD universal-ctags/universal-ctags/universal-ctags # install failed
 exec $SHELL -l
 
-# rust
-# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-source $HOME/.cargo/env
-
-# node
-sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
-sudo apt-get -qq -y install nodejs
-
 # symlink
 cd ~/
-git clone https://github.com/tarjoilija/zgen.git ~/.zgen
+mkdir ~/.zinit
+git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 git clone https://github.com/ktrysmt/dotfiles  ~/dotfiles
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/peco/
@@ -80,6 +72,15 @@ git secrets --register-aws --global
 git secrets --install ~/.git-templates/git-secrets
 git config --global init.templatedir '~/.git-templates/git-secrets'
 git config --global credential.helper store
+
+# rust
+# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
+
+# node
+sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+sudo apt-get -qq -y install nodejs
 
 # go
 mkdir -p ~/project/bin

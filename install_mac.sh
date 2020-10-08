@@ -37,17 +37,13 @@ brew install \
   coreutils \
   llvm \
   neovim
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags --with-libyaml
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 exec $SHELL -l
-
-# rust
-# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-source $HOME/.cargo/env
 
 # symlink
 cd ~/
-git clone https://github.com/tarjoilija/zgen.git ~/.zgen
+mkdir ~/.zinit
+git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 git clone https://github.com/ktrysmt/dotfiles  ~/dotfiles
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/peco/
@@ -102,6 +98,11 @@ pip3 install ipdb # python debugger
 )
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 kubectl krew install tree open-svc
+
+# rust
+# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
 
 # sub tools
 go get github.com/go-delve/delve/cmd/dlv
