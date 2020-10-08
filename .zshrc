@@ -21,7 +21,7 @@
   colors
 }
 
-: "up and down" && {
+: "extra up and down key-binding" && {
   autoload -U up-line-or-beginning-search
   autoload -U down-line-or-beginning-search
   zle -N up-line-or-beginning-search
@@ -101,6 +101,13 @@
   alias vimf='vim $(fzf)'
   alias vimdiff='nvim -d'
   alias typora='open -a typora'
+
+  # dstat
+  alias dstat-full="dstat -Tclmdrn"  # full
+  alias dstat-memory="dstat -Tclm"   # memory
+  alias dstat-cpu="dstat -Tclr"      # cpu
+  alias dstat-network="dstat -Tclnd" # network
+  alias dstat-diskio="dstat -Tcldr"  # diskI/O
 }
 
 : "lazyload completions" && {
@@ -203,22 +210,14 @@
   bindkey '^x^r' peco-select-snippet
 }
 
-: "dstat" && {
-  alias dstat-full="dstat -Tclmdrn"  # full
-  alias dstat-memory="dstat -Tclm"   # memory
-  alias dstat-cpu="dstat -Tclr"      # cpu
-  alias dstat-network="dstat -Tclnd" # network
-  alias dstat-diskio="dstat -Tcldr"  # diskI/O
-}
-
 : "peco-history" && {
   function peco-select-history() {
-      emulate -L zsh
-      local delimiter=$'\0; \0' newline=$'\n'
-      BUFFER=${"$(print -rl ${history//$newline/$delimiter} | peco --query "$LBUFFER")"//$delimiter/$newline}
-      CURSOR=$#BUFFER
-      zle -Rc
-      zle reset-prompt
+    emulate -L zsh
+    local delimiter=$'\0; \0' newline=$'\n'
+    BUFFER=${"$(print -rl ${history//$newline/$delimiter} | peco --query "$LBUFFER")"//$delimiter/$newline}
+    CURSOR=$#BUFFER
+    zle -Rc
+    zle reset-prompt
   }
   zle     -N   peco-select-history
   bindkey '^r' peco-select-history
