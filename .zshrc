@@ -23,7 +23,7 @@
   export HIST_STAMPS="yyyy/mm/dd"
   export EDITOR='vim'
   export HISTSIZE=5000000
-  export MANPAGER="col -b -x|vim -"
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
   # go
   export PATH=$PATH:/usr/local/go/bin
@@ -35,6 +35,7 @@
   export PATH="/usr/local/opt/llvm/bin:$PATH" # clangd, clangd-format
 
   # rust
+  export PATH="$HOME/.cargo/bin:$PATH"
   [ -f ~/.cargo/env ] && source ~/.cargo/env
 
   # fzf
@@ -50,13 +51,6 @@
   # k8s/docker
   export DOCKER_BUILDKIT=1
   export KREW_NO_UPGRADE_CHECK=1
-
-  # other path
-  export PATH="$HOME/.cargo/bin:$PATH"
-  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-  export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
-  export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
-  export PATH=$HOME/.rbenv/shims:$PATH
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 }
 
@@ -102,7 +96,7 @@
 : "completions for k8s" && {
 
   # kubectl
-  if (which kubectl > /dev/null); then
+  if type kubectl > /dev/null 2>&1 ;then
     function kubectl() {
       if ! type __start_kubectl >/dev/null 2>&1; then
           source <(command kubectl completion zsh)
@@ -111,18 +105,8 @@
     }
   fi
 
-  # kops
-  if (which kops > /dev/null); then
-    function kops() {
-      if ! type __start_kops >/dev/null 2>&1; then
-          source <(command kops completion zsh)
-      fi
-      command kops "$@"
-    }
-  fi
-
   # helm
-  if (which helm > /dev/null); then
+  if type helm > /dev/null 2>&1 ;then
     function helm() {
       if ! type __start_helm >/dev/null 2>&1; then
           source <(command helm completion zsh)
@@ -132,7 +116,7 @@
   fi
 
   # eksctl
-  if (which eksctl > /dev/null); then
+  if type eksctl > /dev/null 2>&1 ;then
     function eksctl() {
       if ! type __start_eksctl >/dev/null 2>&1; then
           source <(command eksctl completion zsh)
@@ -142,7 +126,7 @@
   fi
 
   # kind
-  if (which kind > /dev/null); then
+  if type kind > /dev/null 2>&1 ;then
     function kind() {
       if ! type __start_kind >/dev/null 2>&1; then
           source <(command kind completion zsh)
@@ -198,7 +182,7 @@
   echo "$PWD" >> ~/.powered_cd.log
   }
   function powered_cd() {
-    if (which tac > /dev/null); then
+    if type tac > /dev/null 2>&1 ;then
       tac="tac"
     else
       tac="tail -r"
@@ -259,27 +243,6 @@
   bindkey '^r' peco-select-history
 }
 
-: "fzf-history" && {
-  # function fzf-history-widget() {
-  #   local selected num
-  #   setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
-  #   selected=( $(fc -rl 1 |
-  #     FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.. --tiebreak=index --bind=ctrl-r:toggle-sort $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m" $(__fzfcmd)) )
-  #   local ret=$?
-  #   if [ -n "$selected" ]; then
-  #     num=$selected[1]
-  #     if [ -n "$num" ]; then
-  #       zle vi-fetch-history -n $num
-  #     fi
-  #   fi
-  #   zle redisplay
-  #   typeset -f zle-line-init >/dev/null && zle zle-line-init
-  #   return $ret
-  # }
-  # zle     -N   fzf-history-widget
-  # bindkey '^t' fzf-history-widget
-}
-
 : "tmux refresh" && {
   function precmd() {
     if [ ! -z $TMUX ]; then
@@ -288,13 +251,15 @@
   }
 }
 
-: "Switch ENV by OSTYPE" && {
+: "Switch ENVs by OSTYPE" && {
   if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+    export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 
     if [[ "$USERNAME" == "vagrant" ]]; then
-      # Ubuntu on Vagrant
+      # linux on Vagrant
     fi
 
   elif [[ "$OSTYPE" == "darwin"* ]]; then
@@ -329,7 +294,7 @@
 }
 
 : "zprof" && {
-  if (which zprof > /dev/null) ;then
+  if type zprof > /dev/null 2>&1 ;then
     zprof | less
   fi
 }
