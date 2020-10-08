@@ -58,12 +58,14 @@
 endfunction
 
 function! s:toggle_fern() abort
-  :cd `git rev-parse --show-toplevel`
+  :silent! cd `git rev-parse --show-toplevel`
   :Fern . -keep -drawer -stay -toggle -width=50
 endfunction
 
 function! s:focus_fern() abort
-  :cd %:h | cd `git rev-parse --show-toplevel` | :Fern . -reveal=% -keep -drawer -stay -width=50
+  :cd %:p:h
+  :silent! cd `git rev-parse --show-toplevel`
+  :Fern . -reveal=% -keep -drawer -stay -width=50
   :wincmd p
 endfunction
 
@@ -74,7 +76,6 @@ augroup FernSetting
   autocmd!
   autocmd FileType fern call s:init_fern()
   autocmd VimEnter * ++nested Fern . -keep -drawer -stay -toggle -width=50
-  " autocmd BufWinEnter * if "" == expand('%') && &buftype !~ 'nofile' | echo "hoge" | endif
 augroup END
 
 let g:fern#opener = "vsplit"

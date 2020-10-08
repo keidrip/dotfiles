@@ -1,20 +1,33 @@
-: "zgen" && {
-  source "${HOME}/.zgen/zgen.zsh"
-  if ! zgen saved; then
-    echo "Creating a zgen save..."
+: "zinit" && {
+  source ~/.zinit/bin/zinit.zsh
 
-    zgen oh-my-zsh
-    zgen oh-my-zsh plugins/git
+  zinit snippet OMZP::git
+  zinit cdclear -q
+  zinit snippet OMZ::lib/completion.zsh
+  zinit snippet OMZ::lib/key-bindings.zsh
 
-    zgen load aws/aws-cli bin/aws_zsh_completer.sh
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-completions
-    zgen load lukechilds/zsh-better-npm-completion
-    zgen load docker/cli contrib/completion/zsh/_docker
-    zgen load docker/compose contrib/completion/zsh/_docker-compose
+  zinit wait lucid light-mode for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting \
+  blockf atpull'zinit creinstall -q .' \
+      zsh-users/zsh-completions
 
-    zgen save
-  fi
+  zinit light lukechilds/zsh-better-npm-completion
+}
+
+: "color" && {
+  setopt promptsubst
+  autoload -U colors
+  colors
+}
+
+: "up and down" && {
+  autoload -U up-line-or-beginning-search
+  autoload -U down-line-or-beginning-search
+  zle -N up-line-or-beginning-search
+  zle -N down-line-or-beginning-search
+  bindkey "^p" up-line-or-beginning-search # Up
+  bindkey "^n" down-line-or-beginning-search # Down
 }
 
 : "env" && {
@@ -44,9 +57,6 @@
   export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
   export FZF_CTRL_T_OPTS='--select-1 --exit-0 --preview "bat --color=always --style=header,grid --line-range :100 {}"'
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-  # awscli
-  [ -f /usr/local/bin/aws_zsh_completer.sh ] && source /usr/local/bin/aws_zsh_completer.sh
 
   # k8s/docker
   export DOCKER_BUILDKIT=1
@@ -93,7 +103,7 @@
   alias typora='open -a typora'
 }
 
-: "completions for k8s" && {
+: "lazyload completions" && {
 
   # kubectl
   if type kubectl > /dev/null 2>&1 ;then
@@ -134,35 +144,6 @@
       command kind "$@"
     }
   fi
-}
-
-
-: "iab" && {
-  setopt extended_glob
-
-  typeset -A abbreviations
-  abbreviations=(
-      "G"        " | grep"
-      "vimfx"    "fzy | xargs vim"
-  )
-
-  magic-abbrev-expand() {
-      local MATCH
-      LBUFFER=${LBUFFER%%(#m)[-_a-zA-Z0-9]#}
-      LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
-      zle self-insert
-
-  }
-
-  no-magic-abbrev-expand() {
-      LBUFFER+=' '
-
-  }
-
-  zle -N magic-abbrev-expand
-  zle -N no-magic-abbrev-expand
-  bindkey " " magic-abbrev-expand
-  bindkey "^x " no-magic-abbrev-expand
 }
 
 : "powered_cd" && {
@@ -207,7 +188,7 @@
   _powered_cd() {
     _files -/
   }
-  compdef _powered_cd powered_cd
+  # compdef _powered_cd powered_cd
   [ -e ~/.powered_cd.log ] || touch ~/.powered_cd.log
   alias c="powered_cd"
 }
