@@ -24,12 +24,9 @@
 
   zinit cdclear -q
 
-  zinit ice wait lucid
   zinit snippet https://github.com/aws/aws-cli/blob/v2/bin/aws_zsh_completer.sh
 
-  zinit ice wait lucid
   zinit light lukechilds/zsh-better-npm-completion
-
 }
 
 : "color" && {
