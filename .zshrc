@@ -11,9 +11,11 @@
       OMZL::completion.zsh \
       OMZL::key-bindings.zsh
 
-  zinit wait lucid is-snippet as"completion" for \
-      OMZP::git \
+  zinit wait lucid is-snippet for \
       OMZL::git.zsh \
+      OMZP::git
+
+  zinit wait lucid is-snippet as"completion" for \
       OMZP::docker/_docker \
       OMZP::docker-compose/_docker-compose \
       OMZP::rust/_rust \
@@ -27,6 +29,7 @@
 
   zinit ice wait lucid
   zinit light lukechilds/zsh-better-npm-completion
+
 }
 
 : "color" && {
