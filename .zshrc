@@ -1,17 +1,30 @@
 : "zinit" && {
   source ~/.zinit/bin/zinit.zsh
 
-  zinit snippet OMZP::git
-  zinit cdclear -q
-  zinit snippet OMZ::lib/completion.zsh
-  zinit snippet OMZ::lib/key-bindings.zsh
-
   zinit wait lucid light-mode for \
-  atinit"zicompinit; zicdreplay" \
+    atinit"zicompinit; zicdreplay" \
       zdharma/fast-syntax-highlighting \
-  blockf atpull'zinit creinstall -q .' \
+    blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions
 
+  zinit is-snippet for \
+      OMZL::completion.zsh \
+      OMZL::key-bindings.zsh
+
+  zinit wait lucid is-snippet as"completion" for \
+      OMZP::git \
+      OMZL::git.zsh \
+      OMZP::docker/_docker \
+      OMZP::docker-compose/_docker-compose \
+      OMZP::rust/_rust \
+      OMZP::cargo/_cargo \
+      OMZP::rustup/_rustup
+
+  zinit cdclear -q
+
+  zinit snippet https://github.com/aws/aws-cli/blob/v2/bin/aws_zsh_completer.sh
+
+  zinit ice wait lucid
   zinit light lukechilds/zsh-better-npm-completion
 }
 
