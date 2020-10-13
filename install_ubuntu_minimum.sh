@@ -46,6 +46,7 @@ brew install \
 exec $SHELL -l
 
 # symlink
+# sudo ln -s `which zsh` /usr/bin/zsh
 cd ~/
 mkdir ~/.zinit
 git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
