@@ -48,8 +48,8 @@ git clone https://github.com/ktrysmt/dotfiles  ~/dotfiles
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/peco/
 mkdir -p ~/.hammerspoon/
+mkdir -p ~/.local/bin/
 mkdir ~/.cache
-mkdir ~/.local
 mkdir ~/.docker
 ln -s ~/dotfiles/.snippet ~/.snippet
 ln -s ~/dotfiles/.zshenv ~/.zshenv
@@ -103,6 +103,10 @@ kubectl krew install tree open-svc
 # setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
+curl -fsSL https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-mac.gz -o ~/.local/bin/rust-analyzer.gz && \
+  gunzip ~/.local/bin/rust-analyzer.gz \
+  chmod +x ~/.local/bin/rust-analyzer;
+
 
 # sub tools
 go get github.com/go-delve/delve/cmd/dlv

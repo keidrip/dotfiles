@@ -77,6 +77,9 @@ git config --global credential.helper store
 # setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
+curl -fsSL https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux.gz -o ~/.local/bin/rust-analyzer.gz && \
+  gunzip ~/.local/bin/rust-analyzer.gz \
+  chmod +x ~/.local/bin/rust-analyzer;
 
 # node
 sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
