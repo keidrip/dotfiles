@@ -43,7 +43,7 @@ exec $SHELL -l
 # symlink
 cd ~/
 mkdir ~/.zinit
-git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+git clone --depth 1 https://github.com/zdharma/zinit.git ~/.zinit/bin
 git clone https://github.com/ktrysmt/dotfiles  ~/dotfiles
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/peco/
