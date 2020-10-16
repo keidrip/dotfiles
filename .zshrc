@@ -9,7 +9,8 @@
 
   zinit is-snippet for \
       OMZL::completion.zsh \
-      OMZL::key-bindings.zsh
+      OMZL::key-bindings.zsh \
+      OMZL::directories.zsh
 
   zinit wait lucid is-snippet as"completion" for \
       OMZP::docker/_docker \
