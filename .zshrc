@@ -104,6 +104,7 @@
   alias gc="git commit"
   alias gca="git commit -a"
   alias gco="git checkout"
+  alias gcm="git checkout master"
   alias ggpush="git push origin"
   alias ggpull="git pull origin"
   alias gdw="git diff --color-words"
