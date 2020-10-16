@@ -95,6 +95,7 @@
   alias gf="git fetch --prune"
   alias glog="git log"
   alias gd="git diff"
+  alias gdc="git diff --cached"
   alias gp="git push"
   alias gl="git pull"
   alias gs="git status"
