@@ -48,12 +48,3 @@ if [ "`networksetup -getcurrentlocation`" = "$switch_trigger" ]; then
 else
   unset_proxy
 fi
-
-if [ -f ~/.cache/nswitch_office  ] || [ "`networksetup -getcurrentlocation`" = "$switch_trigger" ]; then
-  echo "Switch to proxy for office network"
-  touch ~/.cache/nswitch_office
-  set_proxy
-else
-  unset_proxy
-  rm -f ~/.cache/nswitch_office
-fi
