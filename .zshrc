@@ -43,14 +43,10 @@
 
 : "env" && {
   # zsh
-  setopt interactivecomments # allow comment out by number sign
-  export HISTSIZE=5000000    # メモリに保存される履歴の件数
-  export SAVEHIST=5000000    # 履歴ファイルに保存される履歴の件数
-  setopt hist_ignore_dups    # 重複を記録しない
-  setopt EXTENDED_HISTORY    # 開始と終了を記録
   export PROMPT='[%*]%{$fg_bold[green]%} %{$fg[cyan]%}%c %{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
   export HIST_STAMPS="yyyy/mm/dd"
   export EDITOR='vim'
+  export HISTSIZE=5000000
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
   # go
