@@ -1,7 +1,7 @@
 " general
 let mapleader = "\<Space>"
 
-nnoremap P "0p
+map <Leader>p "0p
 
 tnoremap <ESC> <C-\><C-n>
 nnoremap cn *Ncgn
