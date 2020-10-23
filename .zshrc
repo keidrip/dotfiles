@@ -265,7 +265,7 @@
 
 : "Switch ENVs by OSTYPE" && {
   if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+    export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
     export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
