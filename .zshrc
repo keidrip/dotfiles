@@ -62,6 +62,7 @@
   export HIST_STAMPS="yyyy/mm/dd"
   export EDITOR='vim'
   export HISTSIZE=5000000
+  export SAVEHIST=5000000
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
   # go
