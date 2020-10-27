@@ -26,7 +26,11 @@
   zinit light lukechilds/zsh-better-npm-completion
 }
 
-: "color" && {
+: "setopt" && {
+  # comment out
+  setopt interactivecomments
+
+  # color
   setopt promptsubst
   autoload -U colors
   colors
