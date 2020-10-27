@@ -27,13 +27,24 @@
 }
 
 : "setopt" && {
-  # comment out
+  # operation
   setopt interactivecomments
+  setopt AUTO_MENU
+  setopt AUTO_CD
+  setopt AUTO_NAME_DIRS
+  setopt HIST_IGNORE_DUPS
+  setopt HIST_IGNORE_ALL_DUPS
 
   # color
   setopt promptsubst
   autoload -U colors
   colors
+
+  # move completion list
+  bindkey -M menuselect 'h' vi-backward-char
+  bindkey -M menuselect 'j' vi-down-line-or-history
+  bindkey -M menuselect 'k' vi-up-line-or-history
+  bindkey -M menuselect 'l' vi-forward-char
 }
 
 : "extra up and down key-binding" && {
