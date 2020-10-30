@@ -19,6 +19,7 @@ Plug 'lambdalisue/fern-git-status.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 
 " [general]
+Plug 'ryanoasis/vim-devicons'
 Plug 'cohama/lexima.vim'
 Plug 'Shougo/unite.vim'
 Plug 'LeafCage/yankround.vim'

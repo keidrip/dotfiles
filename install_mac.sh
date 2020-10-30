@@ -122,6 +122,7 @@ brew cask install virtualbox
 brew cask install vagrant
 brew cask install karabiner-elements
 brew cask install michaelvillar-timer
+brew cask install homebrew/cask-fonts/font-hack-nerd-font
 
 # the other
 cp -Rp /System/Library/CoreServices/ScreenSaverEngine.app /Applications/lock.app
