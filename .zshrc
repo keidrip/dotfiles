@@ -105,6 +105,7 @@
   alias tsync="tmux set-window-option synchronize-panes"
   alias batd="bat -l diff"
   alias bats="bat -l sh"
+  alias batf='bat $(fzf)'
   alias f='fzf --preview "bat --color=always --style=header,grid --line-range :100 {}"'
 
   # git
