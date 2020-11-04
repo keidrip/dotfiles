@@ -14,13 +14,16 @@ bind -r K resize-pane -U 10
 bind -r L resize-pane -R 10
 # monitor
 bind C-s run "tmux last-pane || tmux last-window || tmux new-window"
+
 #set-window-option -g monitor-activity on
+setw -g mode-keys vi
 bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
 bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
-bind-key -T copy-mode Enter send-keys -X copy-pipe-and-cancel "pbcopy"
-bind-key -T copy-mode y send-keys -X copy-pipe-and-cancel "pbcopy"
+# bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
+# bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+# bind-key -T copy-mode Enter send-keys -X copy-pipe-and-cancel "pbcopy"
+# bind-key -T copy-mode y send-keys -X copy-pipe-and-cancel "pbcopy"
+
 # OLD: bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 bind 'C' new-window -c "#{pane_current_path}";
 bind '%' split-window -h -c "#{pane_current_path}";
@@ -37,7 +40,6 @@ bind-key a run "tmux last-pane && tmux resize-pane -Z"
 # general
 # ---------
 set -sg escape-time 0
-#set-window-option -g mode-keys vi
 set -g status-interval 30
 set -g base-index 1
 set -g pane-base-index 1
@@ -75,9 +77,6 @@ set -g status-right \
 set-option -g pane-border-status bottom
 set-option -g pane-border-format "#[bg=black] #[fg=black,bg=white] #P #[bg=black] #(~/dotfiles/bin/tmux-pane-border '#{pane_current_path}')#[bg=black] #[default]"
 
-# コピーモードのキーバインドをviライクにする
-setw -g mode-keys vi
-# ウィンドウ名が実行中のコマンド名になるのを止める
 setw -g automatic-rename off
 
 # --------------
