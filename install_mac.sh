@@ -8,6 +8,7 @@ set -e
 brew install \
   curl \
   openssl \
+  reattach-to-user-namespace \
   go \
   peco \
   wget \
