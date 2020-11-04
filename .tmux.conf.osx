@@ -17,12 +17,10 @@ bind C-s run "tmux last-pane || tmux last-window || tmux new-window"
 
 #set-window-option -g monitor-activity on
 setw -g mode-keys vi
-bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
-bind-key -T copy-mode-vi v send-keys -X begin-selection
-# bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
-# bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
-# bind-key -T copy-mode Enter send-keys -X copy-pipe-and-cancel "pbcopy"
-# bind-key -T copy-mode y send-keys -X copy-pipe-and-cancel "pbcopy"
+bind-key -T copy-mode C-v send-keys -X rectangle-toggle
+bind-key -T copy-mode v send-keys -X begin-selection
+bind-key -T copy-mode Enter send-keys -X copy-pipe-and-cancel "pbcopy"
+bind-key -T copy-mode y send-keys -X copy-pipe-and-cancel "pbcopy"
 
 # OLD: bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 bind 'C' new-window -c "#{pane_current_path}";
