@@ -151,6 +151,7 @@
   alias vimf='vim $(fzf)'
   alias vimdiff='nvim -d'
   alias typora='open -a typora'
+  alias rs='evcxr'
 
   # dstat
   alias dstat='dstat -tlamp'
