@@ -59,13 +59,13 @@ endfunction
 
 function! s:toggle_fern() abort
   :silent! cd `git rev-parse --show-toplevel`
-  :Fern . -keep -drawer -stay -toggle -width=50
+  :Fern . -drawer -stay -toggle -width=50
 endfunction
 
 function! s:focus_fern() abort
   :cd %:p:h
   :silent! cd `git rev-parse --show-toplevel`
-  :Fern . -reveal=% -keep -drawer -stay -width=50
+  :Fern . -reveal=% -drawer -stay -width=50
   :wincmd p
 endfunction
 
@@ -75,9 +75,10 @@ nnoremap <silent> <C-W>f :<C-u>call <SID>focus_fern()<CR>
 augroup FernSetting
   autocmd!
   autocmd FileType fern call s:init_fern()
-  autocmd VimEnter * ++nested Fern . -keep -drawer -stay -toggle -width=50
+  autocmd VimEnter * ++nested Fern . -drawer -stay -toggle -width=50
 augroup END
 
 let g:fern#opener = "vsplit"
 let g:fern#default_hidden = 1
+
 
