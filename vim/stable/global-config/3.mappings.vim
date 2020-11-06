@@ -60,3 +60,10 @@ nnoremap <C-x>ck :<C-u>call <SID>change_case("ck")<CR>
 nnoremap <C-x>kc :<C-u>call <SID>change_case("kc")<CR>
 nnoremap <C-x>ks :<C-u>call <SID>change_case("ks")<CR>
 
+" use it later...
+nnoremap <c-j> <Nop>
+inoremap <c-j> <Nop>
+vnoremap <c-j> <Nop>
+nnoremap <c-k> <Nop>
+inoremap <c-k> <Nop>
+vnoremap <c-k> <Nop>
