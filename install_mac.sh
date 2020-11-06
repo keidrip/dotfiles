@@ -23,7 +23,7 @@ brew install \
   tig \
   fzy \
   exa \
-  python \
+  python3 \
   jq \
   git-secrets \
   bat \
