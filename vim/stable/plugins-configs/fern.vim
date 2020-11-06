@@ -1,4 +1,6 @@
  function! s:init_fern() abort
+
+  " custom expander
   nmap <buffer><expr>
       \ <Plug>(fern-my-expand-or-collapse)
       \ fern#smart#leaf(
@@ -6,10 +8,10 @@
       \   "\<Plug>(fern-action-expand:stay)",
       \   "\<Plug>(fern-action-collapse)",
       \ ) " 循環するので使うのはexpand:stay固定で
-
+  " overwrite fern-action-expand
   nmap <buffer>
         \ <Plug>(fern-action-expand)
-        \ <Plug>(fern-my-expand-or-collapse) " overwrite <expand>
+        \ <Plug>(fern-my-expand-or-collapse)
 
   nmap <buffer> o <Plug>(fern-action-open-or-expand)
 
@@ -22,9 +24,9 @@
   nmap <buffer> gs <Plug>(fern-action-open:vsplit)<C-w>p
 
   nmap <buffer> ma <Plug>(fern-action-new-path)
-  nmap <buffer> md <Plug>(fern-action-trash)
   nmap <buffer> mm <Plug>(fern-action-move)
   nmap <buffer> mc <Plug>(fern-action-copy)
+  nmap <buffer> md <Plug>(fern-action-trash)
 
   nmap <buffer> y <Plug>(fern-action-yank:label)
   nmap <buffer> Y <Plug>(fern-action-yank:path)
@@ -80,5 +82,4 @@ augroup END
 
 let g:fern#opener = "vsplit"
 let g:fern#default_hidden = 1
-
 

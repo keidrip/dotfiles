@@ -1,4 +1,5 @@
 "" Settings
+
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -27,8 +28,6 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'tpope/vim-dispatch'
 Plug 'itchyny/lightline.vim'
 Plug 'liuchengxu/vista.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'lambdalisue/vim-unified-diff'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tmhedberg/matchit'
@@ -52,13 +51,17 @@ Plug 'ncm2/float-preview.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-" [lsp]
+" [async/lsp]
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'mattn/vim-lsp-settings'
+
+" [snip]
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " [html/css]
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript'] }

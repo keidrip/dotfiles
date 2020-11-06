@@ -146,7 +146,7 @@
   alias kctx="kubectx"
 
   # other
-  alias py="python3"
+  alias py="/usr/local/bin/python3.9"
   alias vi="vim"
   alias vimf='vim $(fzf)'
   alias vimdiff='nvim -d'

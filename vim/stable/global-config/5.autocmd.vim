@@ -32,4 +32,3 @@ augroup QuickRunSetting
   autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
 augroup END
 
-
