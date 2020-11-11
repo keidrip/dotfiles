@@ -34,6 +34,7 @@
   setopt AUTO_NAME_DIRS
   setopt HIST_IGNORE_DUPS
   setopt HIST_IGNORE_ALL_DUPS
+  setopt share_history
 
   # color
   setopt promptsubst
