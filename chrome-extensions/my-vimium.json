@@ -1,5 +1,5 @@
 {
-  "settingsVersion": "1.64",
+  "settingsVersion": "1.66",
   "exclusionRules": [
     {
       "pattern": "https?://mail.google.com/*",
@@ -42,10 +42,6 @@
       "passKeys": ""
     },
     {
-      "pattern": "https?://trello.com/*",
-      "passKeys": ""
-    },
-    {
       "pattern": "https?://sprocket3.hipchat.com/*",
       "passKeys": ""
     },
@@ -60,12 +56,16 @@
     {
       "pattern": "https?://outlook.live.com/*",
       "passKeys": ""
+    },
+    {
+      "pattern": "https?://app.clickup.com/*",
+      "passKeys": ""
     }
   ],
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# Insert your preferred key mappings here.\nmap <a-r> closeTabsOnRight\nmap <a-l> closeTabsOnLeft\nmap <a-o> closeOtherTabs\nunmap <c-y>\nmap gr closeTabsOnRight\nmap gl closeTabsOnLeft\nmap go closeOtherTabs\nmap gf LinkHints.activateModeWithQueue\nunmap <a-p>\nmap gp togglePinTab",
+  "keyMappings": "# Insert your preferred key mappings here.\nmap <a-r> closeTabsOnRight\nmap <a-l> closeTabsOnLeft\nmap <a-o> closeOtherTabs\nunmap <c-y>\nmap gr closeTabsOnRight\nmap gl closeTabsOnLeft\nmap go closeOtherTabs\nmap gf LinkHints.activateModeWithQueue\nunmap <a-p>\nmap gp togglePinTab\nmap gb visitPreviousTab",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
