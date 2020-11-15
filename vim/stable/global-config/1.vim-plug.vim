@@ -46,6 +46,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'RRethy/vim-illuminate'
 Plug 'chase/vim-ansible-yaml'
 Plug 'ncm2/float-preview.nvim'
+Plug 'junegunn/vim-easy-align'
 
 " [fzf]
 Plug 'junegunn/fzf'
