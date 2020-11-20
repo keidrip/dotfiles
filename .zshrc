@@ -254,14 +254,17 @@
   alias c="powered_cd"
 }
 
+# peco-snippet
 : "peco-snippet" && {
   function peco-select-snippet() {
+    emulate -L zsh
     BUFFER=$(cat ~/.snippet | peco)
     CURSOR=$#BUFFER
-    zle -R -c
+    zle -Rc
+    zle reset-prompt
   }
   zle -N peco-select-snippet
-  bindkey '^x^r' peco-select-snippet
+  bindkey '^X^M' peco-select-snippet
 }
 
 : "peco-history" && {
