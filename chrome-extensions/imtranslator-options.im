@@ -1,0 +1,117 @@
+﻿Chrome Version: 15.68 - Mon Nov 30 2020 22:25:39 GMT+0900 (å,B)
+BL_D_PROV,Google
+BL_T_PROV,Google
+FORSEbubble,0
+INLINEflip,0
+PLD_DIC_FIRSTRUN,dicdone
+PLD_DPROV,Google
+PLD_LOC,false
+PLD_TTSvolume,10
+PLT_LOC,false
+PLT_PROV,google
+PLT_TR_FIRSTRUN,
+PLT_TTSvolume,10
+SL_ALL_PROVIDERS_BBL,Google,Microsoft,Translator
+SL_ALL_PROVIDERS_GT,Google,Microsoft,Translator
+SL_ALL_PROVIDERS_IT,Google,Microsoft
+SL_BACK_VIEW,2
+SL_BBL_X,341
+SL_BBL_Y,403
+SL_BTN_X,0
+SL_BTN_Y,0
+SL_CM1,0
+SL_CM2,0
+SL_CM3,1
+SL_CM4,0
+SL_CM5,0
+SL_CM6,0
+SL_CM7,0
+SL_DBL_bbl,false
+SL_DICT_PRESENT,Google:1,Microsoft:0,Translator:0
+SL_DOM,auto
+SL_Delay,0
+SL_ENABLE,true
+SL_FK_box1,false
+SL_FK_box2,false
+SL_Fontsize,17px
+SL_Fontsize_bbl,16px
+SL_Fontsize_bbl2,
+SL_GVoices,1
+SL_GWPTHist,
+SL_HK_bb1,Alt
+SL_HK_bb2,Escape
+SL_HK_bb2box,true
+SL_HK_btn,Ctrl + Alt + A
+SL_HK_btnbox,false
+SL_HK_gt1,Ctrl + Alt + Z
+SL_HK_gt2,Alt + Z
+SL_HK_it1,Alt + C
+SL_HK_it2,Alt + X
+SL_HK_opt,Ctrl + Alt + O
+SL_HK_optbox,false
+SL_HK_wpt1,Alt + P
+SL_HK_wpt2,Alt + M
+SL_HK_wptbox1,false
+SL_HK_wptbox2,false
+SL_HKset,3|88|false
+SL_HKset_inv,3|90|false
+SL_LNG_LIST,auto,ja,en
+SL_LOCALIZATION,ja
+SL_PrefTrans,3
+SL_SLVoices,0
+SL_SaveText_box_bbl,0
+SL_SaveText_box_gt,0
+SL_SavedText_gt,Save and restore a docker image cache using a registry.  This orb provides commands which may be used as an alternative to the CircleCI 'docker_layer_caching' feature. It is intended to be used with 'machine' executors or jobs which use 'setup_remote_docker'.  Using this orb  This orb requires a docker registry which will be used to push and pull images. Popular docker registries include Docker Hub, Google Container Registry, AWS Elastic Container Registry, and Quay.io. If you already use one of these registries in your job you are all set. The registry you choose for the cache may be different from the registry you use to publish images.  Using pulled images as a cache for docker build  To use images pulled from a docker registry as a cache for image building you must use `--cache-from` with a list of docker images. This orb provides a `build` command to automatically add the images listed in the 'images' field to 'docker build'. If you use a script or a tool like docker-compose to build images you will need to pass the list of images yourself. With docker-compose make sure to set `build.cache_from` in your docker-compose.yml.  Image tags  The images listed in 'with-save-restore-images.images' are effectively the keys used for the cache. For best results you may want to use two tags, one which is gauranteed to exist (for example a tag that is pushed when CI runs on the 'master' branch) and one which is more likely to match the current Dockerfile (for example a tag which includes the current branch name or a hash of the Dockerfile).  If you are building multiple docker images, you can include one or more tags for each image. Created: October 26, 2019 Version Published: April 23, 2020 Releases: 15 See Orb Licensing
+SL_TH_1,0
+SL_TH_2,0
+SL_TH_3,0
+SL_TH_4,0
+SL_Timing,2
+SL_dict,true
+SL_dict_bbl,true
+SL_dictionary,false
+SL_global_lng,false
+SL_global_lng_bbl,false
+SL_global_lng_it,false
+SL_global_lng_wpt,false
+SL_hide_translation,false
+SL_inject_before,false
+SL_inject_brackets,false
+SL_langDst,ja
+SL_langDst_bbl,ja
+SL_langDst_it,ja
+SL_langDst_name,%E6%97%A5%E6%9C%AC%E8%AA%9E
+SL_langDst_name_bbl,%E6%97%A5%E6%9C%AC%E8%AA%9E
+SL_langDst_name_gt,å,
+SL_langDst_name_it,%E6%97%A5%E6%9C%AC%E8%AA%9E
+SL_langDst_name_wpt,%E6%97%A5%E6%9C%AC%E8%AA%9E
+SL_langDst_wpt,ja
+SL_langSrc,auto
+SL_langSrc_bbl,auto
+SL_langSrc_it,auto
+SL_langSrc_wpt,auto
+SL_line_break,false
+SL_no_detect,true
+SL_no_detect_bbl,true
+SL_no_detect_it,true
+SL_other_bbl,0
+SL_other_gt,0
+SL_other_it,1
+SL_other_wpt,1
+SL_pin_bbl,false
+SL_pr_bbl,1
+SL_pr_gt,1
+SL_show_back,false
+SL_show_back2,false
+SL_show_button_bbl,true
+SL_style,#239E23
+SL_translation_mos_bbl,false
+SL_whole_word,false
+SL_wptDHist,
+SL_wptGlobAuto,0
+SL_wptGlobLang,ja
+SL_wptGlobTb,0
+SL_wptGlobTip,0
+SL_wptLHist,
+THEMEmode,0
+TTSvolume,10
