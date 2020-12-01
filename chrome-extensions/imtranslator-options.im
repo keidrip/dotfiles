@@ -1,4 +1,4 @@
-﻿Chrome Version: 15.68 - Mon Nov 30 2020 22:25:39 GMT+0900 (å,B)
+﻿Chrome Version: 15.68 - Tue Dec 01 2020 12:21:54 GMT+0900 (å,B)
 BL_D_PROV,Google
 BL_T_PROV,Google
 FORSEbubble,0
@@ -8,8 +8,8 @@ PLD_DPROV,Google
 PLD_LOC,false
 PLD_TTSvolume,10
 PLT_LOC,false
-PLT_PROV,google
-PLT_TR_FIRSTRUN,
+PLT_PROV,Google
+PLT_TR_FIRSTRUN,done
 PLT_TTSvolume,10
 SL_ALL_PROVIDERS_BBL,Google,Microsoft,Translator
 SL_ALL_PROVIDERS_GT,Google,Microsoft,Translator
@@ -38,7 +38,7 @@ SL_Fontsize_bbl,16px
 SL_Fontsize_bbl2,
 SL_GVoices,1
 SL_GWPTHist,
-SL_HK_bb1,Alt
+SL_HK_bb1,Alt + G
 SL_HK_bb2,Escape
 SL_HK_bb2box,true
 SL_HK_btn,Ctrl + Alt + A
@@ -105,7 +105,7 @@ SL_show_back,false
 SL_show_back2,false
 SL_show_button_bbl,true
 SL_style,#239E23
-SL_translation_mos_bbl,false
+SL_translation_mos_bbl,true
 SL_whole_word,false
 SL_wptDHist,
 SL_wptGlobAuto,0
