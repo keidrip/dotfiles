@@ -37,10 +37,6 @@
   nmap <buffer> e <Nop>
   nmap <buffer> E <Nop>
 
-  "bug? <C-n>...
-  nmap <buffer> n <C-n><Plug>(anzu-n-with-echo)
-  nmap <buffer> N <Plug>(anzu-N-with-echo)
-
   nmap <buffer> <Plug>(fern-my-enter-and-tcd)
         \ <Plug>(fern-action-enter)
         \ <Plug>(fern-wait)
