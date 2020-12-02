@@ -37,9 +37,6 @@
   nmap <buffer> e <Nop>
   nmap <buffer> E <Nop>
 
-  nmap <buffer> N <Plug>(anzu-N-with-echo)
-  nmap <buffer> n <Plug>(anzu-n-with-echo)
-
 	nmap <buffer> <Plug>(fern-my-enter-and-tcd)
 	      \ <Plug>(fern-action-enter)
 	      \ <Plug>(fern-wait)
