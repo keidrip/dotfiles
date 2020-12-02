@@ -37,16 +37,20 @@
   nmap <buffer> e <Nop>
   nmap <buffer> E <Nop>
 
-	nmap <buffer> <Plug>(fern-my-enter-and-tcd)
-	      \ <Plug>(fern-action-enter)
-	      \ <Plug>(fern-wait)
-	      \ <Plug>(fern-action-tcd:root)
+  "bug? <C-n>...
+  nmap <buffer> n <C-n><Plug>(anzu-n-with-echo)
+  nmap <buffer> N <Plug>(anzu-N-with-echo)
+
+  nmap <buffer> <Plug>(fern-my-enter-and-tcd)
+        \ <Plug>(fern-action-enter)
+        \ <Plug>(fern-wait)
+        \ <Plug>(fern-action-tcd:root)
   nmap <buffer> C <Plug>(fern-my-enter-and-tcd)
 
-	nmap <buffer> <Plug>(fern-my-leave-and-tcd)
-	      \ <Plug>(fern-action-leave)
-	      \ <Plug>(fern-wait)
-	      \ <Plug>(fern-action-tcd:root)
+  nmap <buffer> <Plug>(fern-my-leave-and-tcd)
+        \ <Plug>(fern-action-leave)
+        \ <Plug>(fern-wait)
+        \ <Plug>(fern-action-tcd:root)
   nmap <buffer> u <Plug>(fern-my-leave-and-tcd)
 
   nmap <buffer> r <Plug>(fern-action-reload)
