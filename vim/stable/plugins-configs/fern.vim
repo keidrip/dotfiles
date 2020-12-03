@@ -1,4 +1,7 @@
- function! s:init_fern() abort
+let g:fern#opener = "vsplit"
+let g:fern#default_hidden = 1
+
+function! s:init_fern() abort
 
   " custom expander
   nmap <buffer><expr>
@@ -71,15 +74,21 @@ function! s:focus_fern() abort
   :wincmd p
 endfunction
 
+function! s:focus_fern_new() abort
+  :cd %:p:h
+  :silent! cd `git rev-parse --show-toplevel`
+  :Fern . -reveal=% -drawer -stay -width=50
+endfunction
+
 map <silent> <C-E> :<C-u>call <SID>toggle_fern()<CR>
 nnoremap <silent> <C-W>f :<C-u>call <SID>focus_fern()<CR>
 
 augroup FernSetting
+  " user function / use ++nested to allow automatic file type detection and such
   autocmd!
   autocmd FileType fern call s:init_fern()
   autocmd VimEnter * ++nested Fern . -drawer -stay -toggle -width=50
+  autocmd BufReadPost * ++nested Fern . -drawer -stay -width=50
 augroup END
 
-let g:fern#opener = "vsplit"
-let g:fern#default_hidden = 1
 

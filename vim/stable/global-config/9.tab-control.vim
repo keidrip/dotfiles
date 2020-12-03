@@ -36,5 +36,5 @@ endfor
 " Tab map
 nmap [Tag]c :tablast <bar> tabnew<CR>
 nmap [Tag]x :tabclose<CR>
-nmap [Tag]n :tabnext<CR>
-nmap [Tag]p :tabprevious<CR>
+nmap <Tab>      gt
+nmap <S-Tab>    gT
