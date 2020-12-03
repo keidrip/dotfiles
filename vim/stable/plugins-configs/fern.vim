@@ -80,7 +80,7 @@ augroup FernSetting
   " user function / use ++nested to allow automatic file type detection and such
   autocmd!
   autocmd FileType fern call s:init_fern()
-  autocmd VimEnter * ++nested Fern . -reveal=% -drawer -stay -width=50
+  autocmd VimEnter * ++nested Fern . -drawer -stay -width=50
 augroup END
 
 
