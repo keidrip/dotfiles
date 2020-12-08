@@ -81,6 +81,8 @@ augroup FernSetting
   autocmd!
   autocmd FileType fern call s:init_fern()
   autocmd VimEnter * ++nested Fern . -drawer -stay -width=50
+  autocmd FileType fern nmap <buffer> N <Plug>(anzu-N-with-echo)
+  autocmd FileType fern nmap <buffer> n j <Plug>(anzu-n-with-echo)
 augroup END
 
 

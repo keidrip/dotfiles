@@ -210,7 +210,7 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>87 1830 735 382 -444 1050 2560 1417 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>553 1982 616 174 -419 1050 2560 1417 </string>
+	<string>524 1982 616 174 -448 1050 2560 1417 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>633 2041 400 129 -447 1050 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -222,7 +222,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>0 450 592 577 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>834 1050 1278 1417 -448 1050 2560 1417 </string>
+	<string>-448 1050 2560 1417 -448 1050 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -858,6 +858,19 @@
 			<string>xterm-256color-italic</string>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Triggers</key>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>PasswordTrigger</string>
+					<key>parameter</key>
+					<string></string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string></string>
+				</dict>
+			</array>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
@@ -1570,7 +1583,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>540029823.01515698</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>44</integer>
+	<integer>46</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -2368,11 +2381,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-10-30T03:01:15Z</date>
+	<date>2020-11-18T14:20:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SwitchTabModifier</key>
