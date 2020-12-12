@@ -8,7 +8,9 @@ read -p "password? > " PASSWORD
 # linuxbrew
 sudo apt-get -qq -y update
 sudo apt-get -qq -y install build-essential curl file git zsh nodejs
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+export CI=true
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
