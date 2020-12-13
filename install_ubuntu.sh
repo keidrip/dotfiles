@@ -45,7 +45,6 @@ brew install \
   llvm \
   neovim
 # brew install --HEAD universal-ctags/universal-ctags/universal-ctags # install failed
-brew cask install homebrew/cask-fonts/font-hack-nerd-font
 exec $SHELL -l
 
 # symlink
