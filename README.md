@@ -4,10 +4,10 @@
 
 ```
 # Ubuntu
-curl -fsSL https://raw.githubusercontent.com/ktrysmt/dotfiles/master/install_ubuntu.sh | bash -
+git clone https://github.com/ktrysmt/dotfiles ~/dotfiles && bash ~/dotfiles/install_ubuntu.sh
 
 # macOS
-curl -fsSL https://raw.githubusercontent.com/ktrysmt/dotfiles/master/install_macos.sh | bash -
+git clone https://github.com/ktrysmt/dotfiles ~/dotfiles && bash ~/dotfiles/install_mac.sh
 ```
 
 ## Author

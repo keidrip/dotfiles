@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -o pipefail
-set -vxeu
+set -e
 
 read -p "password? > " PASSWORD
 
@@ -9,7 +9,7 @@ read -p "password? > " PASSWORD
 sudo apt-get -qq -y update
 sudo apt-get -qq -y install build-essential curl file git zsh nodejs
 export CI=true
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -52,8 +52,7 @@ exec $SHELL -l
 # sudo ln -s `which zsh` /usr/bin/zsh
 cd ~/
 mkdir ~/.zinit
-git clone --depth 1 https://github.com/zdharma/zinit.git ~/.zinit/bin
-git clone https://github.com/ktrysmt/dotfiles  ~/dotfiles
+git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/peco/
 mkdir ~/.cache
@@ -112,5 +111,5 @@ vim +"set ft=rust" +":LspInstallServer rust-analyzer" +qa
 sudo npm i -g npm-check-updates neovim
 
 # the final task
-sudo sh -c "echo $(which zsh) >> /etc/shells";
+sudo bash -c "echo $(which zsh) >> /etc/shells";
 echo $PASSWORD | chsh -s $(which zsh)

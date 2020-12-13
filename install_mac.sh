@@ -3,8 +3,12 @@
 set -o pipefail
 set -e
 
+read -p "password? > " PASSWORD
+
 # brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+export CI=true
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 brew install \
   curl \
   openssl \
@@ -44,8 +48,7 @@ exec $SHELL -l
 # symlink
 cd ~/
 mkdir ~/.zinit
-git clone --depth 1 https://github.com/zdharma/zinit.git ~/.zinit/bin
-git clone https://github.com/ktrysmt/dotfiles  ~/dotfiles
+git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/peco/
 mkdir -p ~/.hammerspoon/
@@ -129,8 +132,8 @@ brew cask install homebrew/cask-fonts/font-hack-nerd-font
 cp -Rp /System/Library/CoreServices/ScreenSaverEngine.app /Applications/lock.app
 
 # the final task
-sudo sh -c "echo $(which zsh) >> /etc/shells";
-chsh -s $(which zsh)
+sudo bash -c "echo $(which zsh) >> /etc/shells";
+echo $PASSWORD | chsh -s $(which zsh)
 
 # cica font: https://github.com/miiton/Cica/releases
 # mouse: defaults write "Apple Global Domain" com.apple.mouse.scaling 11
