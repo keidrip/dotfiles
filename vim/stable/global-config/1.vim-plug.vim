@@ -59,6 +59,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'mattn/vim-lsp-settings'
+Plug 'wellle/tmux-complete.vim'
 
 " [snip]
 Plug 'SirVer/ultisnips'
