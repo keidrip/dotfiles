@@ -10,7 +10,8 @@ tcpdump -nn src port 80 or src port 443                                         
 dig -x localhost                                                                                                                                # reverse w/ dig
 rg foo -g '!*.min.js'                                                                                                                           # exclude w/ rg
 rg foo -g '*.min.js'                                                                                                                            # include w/ rg
-WAIT=$(( RANDOM %= 30 )) sleep $WAIT && echo "foo"                                                                                              # jitter
+export WAIT=$(( RANDOM % 5  )) && sleep $WAIT && echo "foo"                                                                                     # jitter sample 1
+for i in `seq 1 100`; do WAIT=$(($RANDOM % 1200)); echo $WAIT; sleep 0.1; done                                                                  # jitter sample 2
 perl -i -pe 's/foo/bar/' text.txt                                                                                                               # to overwrite replacement by PCRE
 perl -npe 's/(?<=-\d{2})T(?=\d{2}:)/ /g ; s/(?<=:\d{2})Z/ /g'"                                                                                  # to apply multi patterns as inline by PCRE
 cut -d' ' -f1,3                                                                                                                                 # cut
