@@ -89,7 +89,8 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 pip3 install neovim
 ln -sf $(which nvim) /usr/local/bin/vim
 pip3 install 'python-language-server[yapf]'
-pip3 install ipdb # python debugger
+pip3 install ipdb   # python debugger
+pip3 install flake8 # python linter
 
 # k8s
 (
