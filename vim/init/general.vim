@@ -40,7 +40,8 @@ set inccommand=split
 set showtabline=2
 set clipboard=unnamed
 set list
-" set splitright " vsplit で右に開くオプション
+
+set splitright " vsplit で右に開くオプション
 
 " search
 set hlsearch
