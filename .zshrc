@@ -62,6 +62,7 @@
   export PROMPT='[%*]%{$fg_bold[green]%} %{$fg[cyan]%}%c %{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})%B%(!.#.$)%b '
   export HIST_STAMPS="yyyy/mm/dd"
   export EDITOR='vim'
+  export HISTFILE=${HOME}/.zsh_history
   export HISTSIZE=5000000
   export SAVEHIST=5000000
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
