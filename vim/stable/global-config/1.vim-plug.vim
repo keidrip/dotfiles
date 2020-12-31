@@ -64,6 +64,8 @@ Plug 'wellle/tmux-complete.vim'
 " [snip]
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 
 " [html/css]
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'javascript'] }
