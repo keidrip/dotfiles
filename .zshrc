@@ -73,7 +73,6 @@
   export GOPATH=$HOME/go:$HOME/project
 
   # c/c++
-  export C_INCLUDE_PATH=$HOME/workspace/linux-4.15/include
   export PATH="/usr/local/opt/llvm/bin:$PATH" # clangd, clangd-format
 
   # rust
