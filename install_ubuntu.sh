@@ -7,7 +7,7 @@ read -p "password? > " PASSWORD
 
 # linuxbrew
 sudo apt-get -qq -y update
-sudo apt-get -qq -y install build-essential curl file git zsh nodejs wget
+sudo apt-get -qq -y install build-essential curl file git zsh wget
 export CI=true
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
@@ -16,9 +16,7 @@ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # brew
 brew install \
-  go \
   peco \
-  tmux \
   nkf \
   tree \
   ripgrep \
@@ -34,10 +32,6 @@ brew install \
   bat \
   ghq \
   diff-so-fancy \
-  kind \
-  kubectl \
-  kubectx \
-  kubernetes-helm \
   coreutils \
   llvm \
   neovim \
@@ -48,7 +42,6 @@ exec $SHELL -l
 cd ~/
 mkdir ~/.zinit
 git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.config/peco/
 mkdir ~/.cache
 mkdir ~/.local
@@ -58,12 +51,9 @@ ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tigrc ~/.tigrc
-ln -s ~/dotfiles/.tmux.conf.ubuntu ~/.tmux.conf
 ln -s ~/dotfiles/.config/peco/config.json ~/.config/peco/config.json
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 cp ~/dotfiles/.docker/config.json ~/.docker/config.json
-mkdir -p ~/.ipython/profile_default/
-echo "c.InteractiveShell.colors = 'Linux'" > ~/.ipython/profile_default/ipython_config.py
 
 # git config
 git secrets --register-aws --global
@@ -79,30 +69,6 @@ pip3 install neovim
 sudo ln -sf $(which nvim) $(which vim)
 pip3 install 'python-language-server[yapf]'
 pip3 install ipdb # python debugger
-
-# rust
-# setting up of rust components is here: https://gist.github.com/ktrysmt/9601264b37f8e46cad1e7075850478fb
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-source $HOME/.cargo/env
-curl -fsSL https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux.gz -o ~/.local/bin/rust-analyzer.gz && \
-  gunzip ~/.local/bin/rust-analyzer.gz \
-  chmod +x ~/.local/bin/rust-analyzer;
-vim +"set ft=rust" +":LspInstallServer rust-analyzer" +qa
-
-# node
-sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
-sudo apt-get -qq -y install nodejs
-sudo npm i -g npm-check-updates neovim
-
-# go
-mkdir -p ~/project/bin
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$HOME/go/bin:$HOME/project/bin:$PATH
-export GOPATH=$HOME/go:$HOME/project
-go get github.com/go-delve/delve/cmd/dlv
-vim +":setfiletype go" +":GoInstallBinaries" +qa
-vim +"set ft=go" +":LspInstallServer gopls" +qa
-vim +"set ft=go" +":LspInstallServer golangci-lint-langserver" +qa
 
 # the final task
 sudo bash -c "echo $(which zsh) >> /etc/shells";
