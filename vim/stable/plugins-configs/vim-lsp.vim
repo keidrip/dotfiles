@@ -23,8 +23,8 @@ augroup VimLspSetting
   autocmd!
   autocmd FileType go,rust,python,ruby,c,cpp nmap gd <Plug>(lsp-definition)
   autocmd FileType go,rust,python,ruby,c,cpp nmap gv :rightbelow vertical LspDefinition<CR>
-  autocmd FileType go,rust,python,ruby,c,cpp nmap <Leader>n :LspNextDiagnostic<CR>
-  autocmd FileType go,rust,python,ruby,c,cpp nmap <Leader>N :LspPreviousDiagnostic<CR>
+  autocmd FileType go,rust,python,ruby,c,cpp nmap <silent> <Leader>n :LspNextDiagnostic<CR>
+  autocmd FileType go,rust,python,ruby,c,cpp nmap <silent> <Leader>N :LspPreviousDiagnostic<CR>
 
   autocmd FileType go,rust,python,ruby,c,cpp autocmd BufWritePre <buffer> silent! LspDocumentFormatSync
 augroup END
