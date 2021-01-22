@@ -64,4 +64,3 @@ filetype plugin indent on
 syntax on
 
 set cursorline
-hi cursorline cterm=none
