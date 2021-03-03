@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BootstrapDaemon</key>
-	<false/>
+	<true/>
 	<key>Command</key>
 	<string>/usr/local/bin/zsh</string>
 	<key>Control</key>
